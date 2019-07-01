@@ -1,0 +1,24 @@
+name: ${project}
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+dependencies:
+  - python>=3.6
+  - numpy
+  - scipy
+  - pandas
+  - sckit-learn
+  - ipython
+  - jupyterlab
+  - matplotlib
+  - seaborn
+  - statsmodels
+  - altair
+  # for testing
+  - pytest
+  - pytest-cov
+  - tox
+  - pip:
+     # add here only pip-packages that are not available in conda! E.g:
+     - optuna

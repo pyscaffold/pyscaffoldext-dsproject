@@ -1,0 +1,33 @@
+# ${project}
+
+${description}
+
+## Description
+
+A longer description of your project goes here...
+
+## Installation
+
+In order to set up the necessary environment:
+
+1. create an environment `${project}` with the help of [Miniconda][],
+   ```bash
+   conda env create -f environment.yaml
+   ```
+2. activate the new environment with
+   ```bash
+    conda activate ${project}
+    ```
+3. install `${project}` with:
+   ```bash
+    python setup.py install # or `develop`
+    ```
+
+Then take a look into the `experiments` and `notebooks` folder.
+
+## Note
+
+This project has been set up using PyScaffold ${version}. For details and usage
+information on PyScaffold see https://pyscaffold.org/.
+
+[Miniconda]: https://docs.conda.io/en/latest/miniconda.html
