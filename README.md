@@ -19,6 +19,7 @@ Besides the typical [PyScaffold] layout, the extensions provides:
   for generated graphics and figures to be used in reporting,
 * `environment.yaml` to create an [conda][Miniconda] environment with the most
   needed data science libraries and tools,
+* `README.md` with lots of information about how to install your package and development advices.
 
 Check out the initial project structure under [dsproject-demo].
 
