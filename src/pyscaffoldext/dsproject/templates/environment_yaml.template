@@ -11,6 +11,7 @@ dependencies:
   - pandas
   - ipython
   - tqdm
+  - click
   - matplotlib
   - seaborn
   - altair
@@ -18,9 +19,8 @@ dependencies:
   - scikit-learn
   - pytorch
   - pip:
-     # add here only pip-packages that are not available in conda! E.g.:
+     # add here only pip-packages that are not available in conda-forge! E.g.:
      - optuna
-     - click
   # for development only (could also be kept in a separate environment file)
   - jupyterlab
   - pytest
@@ -29,3 +29,5 @@ dependencies:
   - pre_commit
   - nbdime
   - nbstripout
+  - sphinx
+  - recommonmark

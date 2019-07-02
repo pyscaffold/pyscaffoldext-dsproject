@@ -24,7 +24,7 @@ def test_generated_extension_flake8(tmpfolder, venv_run):
     create_project(opts)
 
     with chdir("my_project"):
-        assert '' == venv_run("flake8")
+        assert '' == venv_run("flake8 --max-line-length=88")
         venv_run("python setup.py install")
 
     venv_run("putup {ext_flag} the_actual_project".format(ext_flag=EXT_FLAG))
