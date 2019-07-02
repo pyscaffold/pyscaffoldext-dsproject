@@ -5,20 +5,27 @@ channels:
   - pytorch
 dependencies:
   - python>=3.6
+  - pip
   - numpy
   - scipy
   - pandas
-  - sckit-learn
   - ipython
-  - jupyterlab
+  - tqdm
   - matplotlib
   - seaborn
-  - statsmodels
   - altair
-  # for testing
+  - statsmodels
+  - scikit-learn
+  - pytorch
+  - pip:
+     # add here only pip-packages that are not available in conda! E.g.:
+     - optuna
+     - click
+  # for development only (could also be kept in a separate environment file)
+  - jupyterlab
   - pytest
   - pytest-cov
   - tox
-  - pip:
-     # add here only pip-packages that are not available in conda! E.g:
-     - optuna
+  - pre_commit
+  - nbdime
+  - nbstripout

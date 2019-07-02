@@ -4,12 +4,19 @@
 
 # pyscaffoldext-dsproject
 
-PyScaffold extension tailored for *Data Science* projects. This extension is inspired by [cookiecutter-data-science] 
-and enhanced in many ways.
+PyScaffold extension tailored for *Data Science* projects. This extension is inspired by
+[cookiecutter-data-science] and enhanced in many ways.
 
-The extensions provides:
+Besides the typical [PyScaffold] layout, the extensions provides:
 
-* `data`, `experiments` and `notebooks` folders,
+* `data` folder to keep your data,
+* `experiments` folder for the actual scripts, e.g. `train_model.py`,
+* `notebooks` for data exploration with [Jupyter] notebooks,
+* `notebooks/template.ipynb` for starting with the most important imports and plugins,
+* `models` for trained and serialized models, model predictions, or model summaries,
+* `references` for data dictionaries, manuals, and all other explanatory materials.
+* `reports` for generated analysis as HTML, PDF, LaTeX, etc. and a `figures` subdirectory
+  for generated graphics and figures to be used in reporting,
 * `environment.yaml` to create an [conda][Miniconda] environment, 
 
 
@@ -23,5 +30,7 @@ and note that `putup -h` shows a new option `--dsproject`.
 This project has been set up using PyScaffold 3.2. For details and usage
 information on PyScaffold see https://pyscaffold.org/.
 
+[PyScaffold]: https://pyscaffold.org/
 [cookiecutter-data-science]: https://github.com/drivendata/cookiecutter-data-science
 [Miniconda]: https://docs.conda.io/en/latest/miniconda.html
+[Jupyter]: https://jupyter.org/

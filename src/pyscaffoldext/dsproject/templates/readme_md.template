@@ -23,7 +23,45 @@ In order to set up the necessary environment:
     python setup.py install # or `develop`
     ```
 
+Optional and needed only once after `git clone`:
+
+4. install several [pre-commit][] git hooks with:
+   ```bash
+   pre-commit install
+   ```
+   and checkout the configuration under `.pre-commit-config.yaml`,
+
+5. install [nbstripout][] to remove the output of committed notebooks with:
+   ```bash
+   nbstripout --install --attributes .gitattributes
+   ```
+
+
 Then take a look into the `experiments` and `notebooks` folder.
+
+## Dependency Management & Reproducibility
+
+1. Always keep your abstract (unpinned) dependencies updated in `environment.yaml`.
+2. Create concrete dependencies as `environment.lock.yaml` for the exact reproduction of your
+   environment with:
+   ```bash
+   conda env export -n ${project} -f environment.lock.yaml
+   ```
+   For a multi-OS development, consider using `--no-builds` during the export.
+3. Update your current environment to a new `environment.lock.yaml` with:
+   ```bash
+   conda env update -f environment.lock.yaml --prune
+   ```
+4. Keep your repository nice and tidy. Use the corresponding folders:
+   * `data` to keep your data (won't be committed),
+   * `experiments` for the actual scripts, e.g. `train_model.py`,
+   * `notebooks` for data exploration with [Jupyter][] notebooks,
+   * `notebooks/template.ipynb` including the most important imports and plugins,
+   * `models` for trained and serialized models, model predictions, or model summaries,
+   * `references` for data dictionaries, manuals, and all other explanatory materials.
+   * `reports` for generated analysis as HTML, PDF, LaTeX, etc. and a `figures` subdirectory
+     for generated graphics and figures to be used in reporting,
+   * `environment.yaml` to create an [conda][Miniconda] environment,
 
 ## Note
 
@@ -31,3 +69,6 @@ This project has been set up using PyScaffold ${version}. For details and usage
 information on PyScaffold see https://pyscaffold.org/.
 
 [Miniconda]: https://docs.conda.io/en/latest/miniconda.html
+[pre-commit]: https://pre-commit.com/
+[Jupyter]: https://jupyter.org/
+[nbstripout]: https://github.com/kynan/nbstripout

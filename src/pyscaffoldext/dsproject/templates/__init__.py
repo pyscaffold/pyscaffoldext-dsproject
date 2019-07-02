@@ -59,3 +59,31 @@ def readme_md(opts):
     """
     template = get_template("readme_md")
     return template.safe_substitute(opts)
+
+
+def template_ipynb(opts):
+    """Adds a template Jupyter notebook
+
+    Args:
+        opts (dict): given options, see :obj:`create_project` for
+            an extensive list.
+
+    Returns:
+        str: file content as string
+    """
+    template = get_template("template_ipynb")
+    return template.safe_substitute(opts)
+
+
+def train_model_py(opts):
+    """Adds a template python experiment
+
+    Args:
+        opts (dict): given options, see :obj:`create_project` for
+            an extensive list.
+
+    Returns:
+        str: file content as string
+    """
+    template = get_template("train_model_py")
+    return template.safe_substitute(opts)

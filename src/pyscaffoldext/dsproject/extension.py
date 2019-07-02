@@ -78,12 +78,29 @@ def add_dsproject(struct, opts):
                             gitignore_all,
                             helpers.NO_OVERWRITE)
 
-    path = [opts["project"], "notebooks", ".gitignore"]
+    path = [opts["project"], "notebooks", "template.ipynb"]
+    template_ipynb = templates.template_ipynb(opts)
+    struct = helpers.ensure(struct, path,
+                            template_ipynb,
+                            helpers.NO_OVERWRITE)
+
+    path = [opts["project"], "experiments", "train_model.py"]
+    train_model_py = templates.train_model_py(opts)
+    struct = helpers.ensure(struct, path,
+                            train_model_py,
+                            helpers.NO_OVERWRITE)
+
+    path = [opts["project"], "models", ".gitignore"]
+    struct = helpers.ensure(struct, path,
+                            gitignore_all,
+                            helpers.NO_OVERWRITE)
+
+    path = [opts["project"], "references", ".gitignore"]
     struct = helpers.ensure(struct, path,
                             "\n",
                             helpers.NO_OVERWRITE)
 
-    path = [opts["project"], "experiments", ".gitignore"]
+    path = [opts["project"], "reports", "figures", ".gitignore"]
     struct = helpers.ensure(struct, path,
                             "\n",
                             helpers.NO_OVERWRITE)
@@ -93,6 +110,9 @@ def add_dsproject(struct, opts):
     struct = helpers.ensure(struct, path,
                             environment_yaml,
                             helpers.NO_OVERWRITE)
+
+    path = [opts["project"], "requirements.txt"]
+    struct = helpers.reject(struct, path)
 
     return struct, opts
 
