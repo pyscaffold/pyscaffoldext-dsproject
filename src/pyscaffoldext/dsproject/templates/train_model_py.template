@@ -20,6 +20,7 @@ _logger = logging.getLogger(__name__)
 @click.option('--quiet', 'log_level', flag_value=logging.WARNING, default=True)
 @click.option('-v', '--verbose', 'log_level', flag_value=logging.INFO)
 @click.option('-vv', '--very-verbose', 'log_level', flag_value=logging.DEBUG)
+@click.version_option(${package}.__version__)
 def main(cfg_path: str, log_level: int):
     logging.basicConfig(stream=sys.stdout, level=log_level)
     # YOUR CODE GOES HERE
