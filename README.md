@@ -17,8 +17,8 @@ Besides the typical [PyScaffold] layout, the extensions provides:
 * `references` for data dictionaries, manuals, and all other explanatory materials.
 * `reports` for generated analysis as HTML, PDF, LaTeX, etc. and a `figures` subdirectory
   for generated graphics and figures to be used in reporting,
-* `environment.yaml` to create an [conda][Miniconda] environment with the most 
-  needed data science libraries and tools, 
+* `environment.yaml` to create an [conda][Miniconda] environment with the most
+  needed data science libraries and tools,
 
 Check out the initial project structure under [dsproject-demo].
 

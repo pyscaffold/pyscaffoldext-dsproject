@@ -4,6 +4,7 @@ import argparse
 from pyscaffold.api import Extension, helpers
 from pyscaffold.extensions.no_skeleton import NoSkeleton
 from pyscaffold.extensions.pre_commit import PreCommit
+
 from pyscaffoldext.markdown.extension import MarkDown
 
 from . import templates
@@ -97,12 +98,12 @@ def add_dsproject(struct, opts):
 
     path = [opts["project"], "references", ".gitignore"]
     struct = helpers.ensure(struct, path,
-                            "\n",
+                            "",
                             helpers.NO_OVERWRITE)
 
     path = [opts["project"], "reports", "figures", ".gitignore"]
     struct = helpers.ensure(struct, path,
-                            "\n",
+                            "",
                             helpers.NO_OVERWRITE)
 
     path = [opts["project"], "environment.yaml"]
