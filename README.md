@@ -4,29 +4,69 @@
 
 # pyscaffoldext-dsproject
 
-PyScaffold extension tailored for *Data Science* projects. This extension is inspired by
+[PyScaffold] extension tailored for *Data Science* projects. This extension is inspired by
 [cookiecutter-data-science] and enhanced in many ways.
 
-Besides the typical [PyScaffold] layout, the extensions provides:
+The final layout looks like:
+```
+├── AUTHORS.rst             <- List of developers and maintainers.
+├── CHANGELOG.rst           <- Changelog to keep track of new features and fixes between versions.
+├── LICENSE.txt             <- License as chosen as specified on the command-line.
+├── README.md               <- The top-level README for developers using this project.
+│                          
+├── data                   
+│   ├── external            <- Data from third party sources.
+│   ├── interim             <- Intermediate data that has been transformed.
+│   ├── processed           <- The final, canonical data sets for modeling.
+│   └── raw                 <- The original, immutable data dump.
+│                          
+├── docs                    <- Directory for Sphinx documentation as in the standard PyScaffold setup.
+│                          
+├── environment.yaml        <- The conda environment file for reproducing the analysis environment.
+│                          
+├── models                  <- Trained and serialized models, model predictions, or model summaries
+│                          
+├── notebooks               <- Jupyter notebooks. Naming convention is a number (for ordering),
+│                              the creator's initials, and a short `-` delimited description, e.g.
+│                              `1.0-fw-initial-data-exploration`.
+│                          
+├── references              <- Data dictionaries, manuals, and all other explanatory materials.
+│                          
+├── reports                 <- Generated analysis as HTML, PDF, LaTeX, etc.
+│   └── figures             <- Generated graphics and figures to be used in reporting
+│
+├── scripts                 <- Analysis and production scripts which import the actual PYTHON_PKG,
+│                              e.g. train_model, run_model. etc.
+│                          
+├── setup.cfg               <- Declarative configuration of your project.
+│                          
+├── setup.py                <- Make this project pip installable with `pip install -e` 
+│                              or `python setup.py develop`. 
+│                                                  
+├── src                     <- Source code for use in this project.
+│   └── PYTHON_PKG          <- Actual Python package where the main functionality goes.
+│                          
+├── tests                   <- Unit tests which can be run with `py.test` or `python setup.py test`.
+│                          
+├── .coveragerc             <- Configuration for coverage reports of unit tests.
+│                          
+├── .isort.cfg              <- Configuration for git hook that sorts imports.
+│
+└── .pre-commit-config.yaml <- Configuration of pre-commit git hooks.
+```
 
-* `data` folder to keep your data,
-* `experiments` folder for the actual scripts, e.g. `train_model.py`,
-* `notebooks` for data exploration with [Jupyter] notebooks,
-* `notebooks/template.ipynb` for starting with the most important imports and plugins,
-* `models` for trained and serialized models, model predictions, or model summaries,
-* `references` for data dictionaries, manuals, and all other explanatory materials.
-* `reports` for generated analysis as HTML, PDF, LaTeX, etc. and a `figures` subdirectory
-  for generated graphics and figures to be used in reporting,
-* `environment.yaml` to create an [conda][Miniconda] environment with the most
-  needed data science libraries and tools,
-* `README.md` with lots of information about how to install your package and development advices.
+See a demonstration of the initial project structure under [dsproject-demo] and also check out
+the the documentation of [PyScaffold] for more information.
 
-Check out the initial project structure under [dsproject-demo].
 
 ## Usage
 
 Just install this package with `pip install pyscaffoldext-dsproject`
-and note that `putup -h` shows a new option `--dsproject`.
+and note that `putup -h` shows a new option `--dsproject`. 
+Creating a data science project is then as easy as:
+```
+putup --dsproject my_ds_project
+```
 
 ## Note
 

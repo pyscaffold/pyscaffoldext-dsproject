@@ -79,13 +79,19 @@ def add_dsproject(struct, opts):
                             gitignore_all,
                             helpers.NO_OVERWRITE)
 
+    for folder in ('external', 'interim', 'preprocessed', 'raw'):
+        path = [opts["project"], "data", folder]
+        struct = helpers.ensure(struct, path,
+                                gitignore_all,
+                                helpers.NO_OVERWRITE)
+
     path = [opts["project"], "notebooks", "template.ipynb"]
     template_ipynb = templates.template_ipynb(opts)
     struct = helpers.ensure(struct, path,
                             template_ipynb,
                             helpers.NO_OVERWRITE)
 
-    path = [opts["project"], "experiments", "train_model.py"]
+    path = [opts["project"], "scripts", "train_model.py"]
     train_model_py = templates.train_model_py(opts)
     struct = helpers.ensure(struct, path,
                             train_model_py,

@@ -43,6 +43,20 @@
    "source": [
     "from ${package} import *"
    ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Attention**: When saving this file please use the following naming convention: `VERSION-YOUR_INITIALS-SHORT_DESCRIPTION`, e.g. `1.0-fw-initial-data-exploration`. The version number mainly helps you to order the files."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
@@ -66,10 +80,10 @@
   "pycharm": {
    "stem_cell": {
     "cell_type": "raw",
-    "source": [],
     "metadata": {
      "collapsed": false
-    }
+    },
+    "source": []
    }
   }
  },
