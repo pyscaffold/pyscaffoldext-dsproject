@@ -2,9 +2,12 @@
 Changelog
 =========
 
+Version 0.2
+===========
+
+- Reworked the general layout some more
+
 Version 0.1
 ===========
 
-- Feature A added
-- FIX: nasty bug #1729 fixed
-- add your changes here!
+- Initial commit
