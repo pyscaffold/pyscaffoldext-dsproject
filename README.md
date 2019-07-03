@@ -29,7 +29,7 @@ The final directory structure looks like:
 │
 ├── environment.yaml        <- The conda environment file for reproducing the analysis environment.
 │
-├── models                  <- Trained and serialized models, model predictions, or model summaries
+├── models                  <- Trained and serialized models, model predictions, or model summaries.
 │
 ├── notebooks               <- Jupyter notebooks. Naming convention is a number (for ordering),
 │                              the creator's initials, and a short `-` delimited description, e.g.
@@ -38,7 +38,7 @@ The final directory structure looks like:
 ├── references              <- Data dictionaries, manuals, and all other explanatory materials.
 │
 ├── reports                 <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures             <- Generated graphics and figures to be used in reporting
+│   └── figures             <- Generated graphics and figures to be used in reporting.
 │
 ├── scripts                 <- Analysis and production scripts which import the actual PYTHON_PKG,
 │                              e.g. train_model, run_model. etc.
