@@ -57,6 +57,7 @@ def readme_md(opts):
         str: file content as string
     """
     template = get_template("readme_md")
+    opts['pkg'] = opts['package'].ljust(19)
     return template.safe_substitute(opts)
 
 

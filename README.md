@@ -5,9 +5,14 @@
 # pyscaffoldext-dsproject
 
 [PyScaffold] extension tailored for *Data Science* projects. This extension is inspired by
-[cookiecutter-data-science] and enhanced in many ways.
+[cookiecutter-data-science] and enhanced in many ways. The main differences are that it:
+1. advocates a proper Python package structure that can be shipped and distributed,
+2. uses a [conda] environment instead of something `virtualenv` based and is thus more suitable
+   for data science projects.
+3. has tons more default configuration for [Sphinx], [py.test], [pre-commit], etc. to foster
+   clean coding and best practices.
 
-The final layout looks like:
+The final directory structure looks like:
 ```
 ├── AUTHORS.rst             <- List of developers and maintainers.
 ├── CHANGELOG.rst           <- Changelog to keep track of new features and fixes between versions.
@@ -43,7 +48,7 @@ The final layout looks like:
 ├── setup.py                <- Make this project pip installable with `pip install -e` 
 │                              or `python setup.py develop`. 
 │                                                  
-├── src                     <- Source code for use in this project.
+├── src
 │   └── PYTHON_PKG          <- Actual Python package where the main functionality goes.
 │                          
 ├── tests                   <- Unit tests which can be run with `py.test` or `python setup.py test`.
@@ -78,3 +83,6 @@ information on PyScaffold see https://pyscaffold.org/.
 [Miniconda]: https://docs.conda.io/en/latest/miniconda.html
 [Jupyter]: https://jupyter.org/
 [dsproject-demo]: https://github.com/pyscaffold/dsproject-demo
+[Sphinx]: http://www.sphinx-doc.org/
+[py.test]: https://docs.pytest.org/
+[pre-commit]: https://pre-commit.com/
