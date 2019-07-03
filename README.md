@@ -7,7 +7,7 @@
 [PyScaffold] extension tailored for *Data Science* projects. This extension is inspired by
 [cookiecutter-data-science] and enhanced in many ways. The main differences are that it
 1. advocates a proper Python package structure that can be shipped and distributed,
-2. uses a [conda] environment instead of something `virtualenv` based and is thus more suitable
+2. uses a [conda] environment instead of something [virtualenv]-based and is thus more suitable
    for data science projects,
 3. more default configurations for [Sphinx], [py.test], [pre-commit], etc. to foster
    clean coding and best practices.
@@ -86,4 +86,5 @@ information on PyScaffold see https://pyscaffold.org/.
 [Sphinx]: http://www.sphinx-doc.org/
 [py.test]: https://docs.pytest.org/
 [conda]: https://docs.conda.io/
+[virtualenv]: https://virtualenv.pypa.io/
 [pre-commit]: https://pre-commit.com/
