@@ -27,7 +27,7 @@ The final directory structure looks like:
 │   └── raw                 <- The original, immutable data dump.
 ├── docs                    <- Directory for Sphinx documentation in rst or md.
 ├── environment.yaml        <- The conda environment file for reproducibility.
-├── models                  <- Trained and serialized models, model predictions, 
+├── models                  <- Trained and serialized models, model predictions,
 │                              or model summaries.
 ├── notebooks               <- Jupyter notebooks. Naming convention is a number (for
 │                              ordering), the creator's initials and a description,
@@ -42,7 +42,7 @@ The final directory structure looks like:
 │                              or `python setup.py develop`.
 ├── src
 │   └── PYTHON_PKG          <- Actual Python package where the main functionality goes.
-├── tests                   <- Unit tests which can be run with `py.test` or 
+├── tests                   <- Unit tests which can be run with `py.test` or
 │                              `python setup.py test`.
 ├── .coveragerc             <- Configuration for coverage reports of unit tests.
 ├── .isort.cfg              <- Configuration for git hook that sorts imports.
