@@ -12,6 +12,8 @@
 3. more default configurations for [Sphinx], [py.test], [pre-commit], etc. to foster
    clean coding and best practices.
 
+Also consider using [dvc] to version control and share your data within your team.
+
 The final directory structure looks like:
 ```
 ├── AUTHORS.rst             <- List of developers and maintainers.
@@ -75,3 +77,4 @@ information on PyScaffold see https://pyscaffold.org/.
 [conda]: https://docs.conda.io/
 [virtualenv]: https://virtualenv.pypa.io/
 [pre-commit]: https://pre-commit.com/
+[dvc]: https://dvc.org/
