@@ -9,6 +9,7 @@ dependencies:
   - numpy
   - scipy
   - pandas
+  - dask
   - ipython
   - tqdm
   - click
