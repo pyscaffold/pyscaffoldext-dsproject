@@ -67,10 +67,10 @@ Then take a look into the `experiments` and `notebooks` folder.
 │   ├── processed           <- The final, canonical data sets for modeling.
 │   └── raw                 <- The original, immutable data dump.
 ├── docs                    <- Directory for Sphinx documentation in rst or md.
-├── environment.yaml        <- The conda environment file for reproducability.
-├── models                  <- Trained and serialized models, model
-│                              predictions, or model summaries.
-├── notebooks               <- Jupyter notebooks. Naming convention is a version (for
+├── environment.yaml        <- The conda environment file for reproducibility.
+├── models                  <- Trained and serialized models, model predictions,
+│                              or model summaries.
+├── notebooks               <- Jupyter notebooks. Naming convention is a number (for
 │                              ordering), the creator's initials and a description,
 │                              e.g. `1.0-fw-initial-data-exploration`.
 ├── references              <- Data dictionaries, manuals, and all other materials.

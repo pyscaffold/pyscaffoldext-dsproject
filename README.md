@@ -24,16 +24,16 @@ The final directory structure looks like:
 │   ├── processed           <- The final, canonical data sets for modeling.
 │   └── raw                 <- The original, immutable data dump.
 ├── docs                    <- Directory for Sphinx documentation in rst or md.
-├── environment.yaml        <- The conda environment file for reproducability.
-├── models                  <- Trained and serialized models, model 
-│                              predictions, or model summaries.
-├── notebooks               <- Jupyter notebooks. Naming convention is a version (for
-│                              ordering), the creator's initials and a description, 
+├── environment.yaml        <- The conda environment file for reproducibility.
+├── models                  <- Trained and serialized models, model predictions, 
+│                              or model summaries.
+├── notebooks               <- Jupyter notebooks. Naming convention is a number (for
+│                              ordering), the creator's initials and a description,
 │                              e.g. `1.0-fw-initial-data-exploration`.
 ├── references              <- Data dictionaries, manuals, and all other materials.
 ├── reports                 <- Generated analysis as HTML, PDF, LaTeX, etc.
 │   └── figures             <- Generated plots and figures for reports.
-├── scripts                 <- Analysis and production scripts which import the 
+├── scripts                 <- Analysis and production scripts which import the
 │                              actual PYTHON_PKG, e.g. train_model.
 ├── setup.cfg               <- Declarative configuration of your project.
 ├── setup.py                <- Make this project pip installable with `pip install -e`
