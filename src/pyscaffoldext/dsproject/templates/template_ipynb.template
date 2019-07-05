@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 1,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -48,7 +48,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "**Attention**: When saving this file please use the following naming convention: `VERSION-YOUR_INITIALS-SHORT_DESCRIPTION`, e.g. `1.0-fw-initial-data-exploration`. The version number mainly helps you to order the files."
+    "**PLEASE** save this file right now using the following naming convention: `NUMBER_FOR_SORTING-YOUR_INITIALS-SHORT_DESCRIPTION`, e.g. `1.0-fw-initial-data-exploration`. Use the number to order the file within the directory according to its usage."
    ]
   },
   {
