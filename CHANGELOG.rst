@@ -2,6 +2,13 @@
 Changelog
 =========
 
+Version 0.2.1
+=============
+
+- Fixed some docs
+- Adjusted line lengths
+- Some cosmetic changes
+
 Version 0.2
 ===========
 
