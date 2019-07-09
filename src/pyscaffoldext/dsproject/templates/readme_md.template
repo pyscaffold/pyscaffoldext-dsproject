@@ -29,13 +29,15 @@ Optional and needed only once after `git clone`:
    ```
    pre-commit install
    ```
-   and checkout the configuration under `.pre-commit-config.yaml`,
+   and checkout the configuration under `.pre-commit-config.yaml`.
+   The `-n, --no-verify` flag of `git commit` can be used to deactivate pre-commit hooks temporarily.
 
 5. install [nbstripout] git hooks to remove the output cells of committed notebooks with:
    ```
    nbstripout --install --attributes notebooks/.gitattributes
    ```
    This is useful to avoid large diffs due to plots in your notebooks.
+   A simple `nbstripout --uninstall` will revert these changes.
 
 
 Then take a look into the `experiments` and `notebooks` folder.
@@ -90,6 +92,11 @@ Then take a look into the `experiments` and `notebooks` folder.
 └── .pre-commit-config.yaml <- Configuration of pre-commit git hooks.
 ```
 
+## Coding Conventions & Styles
+
+* Use the [Google style] for docstrings,
+* YOUR OWN CONVENTIONS WITHIN YOUR TEAM...
+
 ## Note
 
 This project has been set up using PyScaffold ${version}. For details and usage
@@ -99,3 +106,4 @@ information on PyScaffold see https://pyscaffold.org/.
 [pre-commit]: https://pre-commit.com/
 [Jupyter]: https://jupyter.org/
 [nbstripout]: https://github.com/kynan/nbstripout
+[Google style]: http://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings
