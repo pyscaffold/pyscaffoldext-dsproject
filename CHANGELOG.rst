@@ -2,6 +2,11 @@
 Changelog
 =========
 
+Version 0.3
+===========
+
+- Added a configs folder
+
 Version 0.2.1
 =============
 
