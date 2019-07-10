@@ -116,6 +116,10 @@ def add_dsproject(struct, opts):
     path = [opts["project"], "requirements.txt"]
     struct = helpers.reject(struct, path)
 
+    path = [opts["project"], "configs", ".gitignore"]
+    struct = helpers.ensure(struct, path,
+                            "",
+                            helpers.NO_OVERWRITE)
     return struct, opts
 
 
