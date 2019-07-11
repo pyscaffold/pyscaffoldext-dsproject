@@ -2,6 +2,11 @@
 Changelog
 =========
 
+Version 0.3.1
+=============
+
+- Fixed wrong folder name in README.md template
+
 Version 0.3
 ===========
 
