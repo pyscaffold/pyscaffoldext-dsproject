@@ -20,6 +20,7 @@ The final directory structure looks like:
 ├── CHANGELOG.rst           <- Changelog to keep track of new features and fixes.
 ├── LICENSE.txt             <- License as chosen on the command-line.
 ├── README.md               <- The top-level README for developers.
+├── configs                 <- Directory for configurations of model & application.
 ├── data
 │   ├── external            <- Data from third party sources.
 │   ├── interim             <- Intermediate data that has been transformed.
