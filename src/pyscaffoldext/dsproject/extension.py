@@ -74,6 +74,10 @@ def add_dsproject(struct, opts):
     """
     gitignore_all = templates.gitignore_all(opts)
 
+    path = [opts["project"], "data", ".gitignore"]
+    struct = helpers.ensure(struct, path,
+                            templates.gitignore_data(opts),
+                            helpers.NO_OVERWRITE)
     for folder in ('external', 'interim', 'preprocessed', 'raw'):
         path = [opts["project"], "data", folder, ".gitignore"]
         struct = helpers.ensure(struct, path,

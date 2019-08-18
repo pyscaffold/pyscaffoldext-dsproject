@@ -21,6 +21,8 @@ def get_template(name):
 def gitignore_all(opts):
     """gitignore file that ignores just everything
 
+    Ignore everything except of this gitignore file.
+
     Args:
         opts (dict): given options, see :obj:`create_project` for
             an extensive list.
@@ -29,6 +31,22 @@ def gitignore_all(opts):
         str: file content as string
     """
     template = get_template("gitignore_all")
+    return template.safe_substitute(opts)
+
+
+def gitignore_data(opts):
+    """gitignore file that ignores almost everything
+
+    Ignore everything except of gitignore also in sub directories.
+
+    Args:
+        opts (dict): given options, see :obj:`create_project` for
+            an extensive list.
+
+    Returns:
+        str: file content as string
+    """
+    template = get_template("gitignore_data")
     return template.safe_substitute(opts)
 
 
