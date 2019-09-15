@@ -2,6 +2,8 @@
 import string
 from pkg_resources import resource_string
 
+from .. import __version__ as dsproject_version
+
 
 def get_template(name):
     """Retrieve the template by name
@@ -76,6 +78,7 @@ def readme_md(opts):
     """
     template = get_template("readme_md")
     opts['pkg'] = opts['package'].ljust(19)
+    opts['dsproject_version'] = dsproject_version
     return template.safe_substitute(opts)
 
 

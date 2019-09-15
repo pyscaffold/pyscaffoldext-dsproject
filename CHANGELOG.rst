@@ -2,6 +2,12 @@
 Changelog
 =========
 
+Version 0.4
+===========
+
+- Add a `.gitignore` also in the `data` folder
+- Changed wording in `README.md`
+
 Version 0.3.1
 =============
 

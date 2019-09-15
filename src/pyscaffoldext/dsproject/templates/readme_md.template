@@ -82,12 +82,11 @@ Then take a look into the `scripts` and `notebooks` folders.
 ├── scripts                 <- Analysis and production scripts which import the
 │                              actual PYTHON_PKG, e.g. train_model.
 ├── setup.cfg               <- Declarative configuration of your project.
-├── setup.py                <- Make this project pip installable with `pip install -e`
-│                              or `python setup.py develop`.
+├── setup.py                <- Use `python setup.py develop` to install for development or
+|                              or create a distribution with `python setup.py bdist_wheel`.
 ├── src
 │   └── ${pkg} <- Actual Python package where the main functionality goes.
-├── tests                   <- Unit tests which can be run with `py.test` or
-│                              `python setup.py test`.
+├── tests                   <- Unit tests which can be run with `py.test`.
 ├── .coveragerc             <- Configuration for coverage reports of unit tests.
 ├── .isort.cfg              <- Configuration for git hook that sorts imports.
 └── .pre-commit-config.yaml <- Configuration of pre-commit git hooks.
@@ -95,11 +94,12 @@ Then take a look into the `scripts` and `notebooks` folders.
 
 ## Note
 
-This project has been set up using PyScaffold ${version}. For details and usage
-information on PyScaffold see https://pyscaffold.org/.
+This project has been set up using PyScaffold ${version} and the [dsproject] ${dsproject_version} extension.
+For details and usage information on PyScaffold see https://pyscaffold.org/.
 
 [conda]: https://docs.conda.io/
 [pre-commit]: https://pre-commit.com/
 [Jupyter]: https://jupyter.org/
 [nbstripout]: https://github.com/kynan/nbstripout
 [Google style]: http://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings
+[dsproject]: https://github.com/pyscaffold/pyscaffoldext-dsproject
