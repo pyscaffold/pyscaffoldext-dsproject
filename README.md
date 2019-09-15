@@ -13,6 +13,8 @@
    clean coding and best practices.
 
 Also consider using [dvc] to version control and share your data within your team.
+Read [this blogpost] to learn how to work with JupyterLab notebooks efficiently by using a
+data science project structure like this. 
 
 The final directory structure looks like:
 ```
@@ -78,3 +80,4 @@ information on PyScaffold see https://pyscaffold.org/.
 [virtualenv]: https://virtualenv.pypa.io/
 [pre-commit]: https://pre-commit.com/
 [dvc]: https://dvc.org/
+[this blogpost]: https://florianwilhelm.info/2018/11/working_efficiently_with_jupyter_lab/
