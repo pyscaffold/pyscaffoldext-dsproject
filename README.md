@@ -1,6 +1,7 @@
-[![Build Status](https://travis-ci.org/pyscaffold/pyscaffoldext-dsproject.svg?branch=master)](https://travis-ci.org/pyscaffold/pyscaffoldext-dsproject)
+[![Build Status](https://api.cirrus-ci.com/github/pyscaffold/pyscaffoldext-dsproject.svg?branch=master)](https://cirrus-ci.com/github/pyscaffold/pyscaffoldext-dsproject)
 [![Coveralls](https://img.shields.io/coveralls/github/pyscaffold/pyscaffoldext-dsproject/master.svg)](https://coveralls.io/r/pyscaffold/pyscaffoldext-dsproject)
 [![PyPI-Server](https://img.shields.io/pypi/v/pyscaffoldext-dsproject.svg)](https://pypi.org/project/pyscaffoldext-dsproject)
+
 
 # pyscaffoldext-dsproject
 
@@ -14,7 +15,7 @@
 
 Also consider using [dvc] to version control and share your data within your team.
 Read [this blogpost] to learn how to work with JupyterLab notebooks efficiently by using a
-data science project structure like this. 
+data science project structure like this.
 
 The final directory structure looks like:
 ```

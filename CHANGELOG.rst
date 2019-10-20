@@ -2,6 +2,11 @@
 Changelog
 =========
 
+Version 0.4.1
+=============
+
+- Fix problem with additional new lines in Windows
+
 Version 0.4
 ===========
 
