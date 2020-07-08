@@ -28,7 +28,7 @@
     "\n",
     "import seaborn as sns\n",
     "sns.set_context(\"poster\")\n",
-    "sns.set(rc={'figure.figsize': (16, 9.)})\n",
+    "sns.set(rc={\"figure.figsize\": (16, 9.)})\n",
     "sns.set_style(\"whitegrid\")\n",
     "\n",
     "import pandas as pd\n",

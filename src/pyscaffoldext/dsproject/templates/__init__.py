@@ -18,7 +18,7 @@ def get_template(name):
     file_name = "{name}.template".format(name=name)
     data = resource_string(__name__, file_name)
     # we assure that line endings are converted to '\n' for all OS
-    data = data.decode(encoding="utf-8").replace(os.linesep, '\n')
+    data = data.decode(encoding="utf-8").replace(os.linesep, "\n")
     return string.Template(data)
 
 
@@ -79,8 +79,8 @@ def readme_md(opts):
         str: file content as string
     """
     template = get_template("readme_md")
-    opts['pkg'] = opts['package'].ljust(19)
-    opts['dsproject_version'] = dsproject_version
+    opts["pkg"] = opts["package"].ljust(19)
+    opts["dsproject_version"] = dsproject_version
     return template.safe_substitute(opts)
 
 

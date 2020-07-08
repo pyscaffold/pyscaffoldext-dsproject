@@ -50,8 +50,8 @@ def venv_run(venv):
     def _run(*args, **kwargs):
         # pytest-virtualenv doesn't play nicely with external os.chdir
         # so let's be explicit about it...
-        kwargs['cd'] = os.getcwd()
-        kwargs['capture'] = True
+        kwargs["cd"] = os.getcwd()
+        kwargs["capture"] = True
         if len(args) == 1 and isinstance(args[0], str):
             args = shlex.split(args[0])
         return venv.run(args, **kwargs).strip()
