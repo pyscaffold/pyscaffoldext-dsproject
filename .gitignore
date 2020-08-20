@@ -12,6 +12,7 @@ __pycache__/*
 .cache/*
 .*.swp
 */.ipynb_checkpoints/*
+.DS_Store
 
 # Project files
 .ropeproject
@@ -19,6 +20,7 @@ __pycache__/*
 .pydevproject
 .settings
 .idea
+.vscode
 tags
 
 # Package files
@@ -31,7 +33,7 @@ tags
 htmlcov/*
 .coverage
 .tox
-junit.xml
+junit*.xml
 coverage.xml
 .pytest_cache/
 

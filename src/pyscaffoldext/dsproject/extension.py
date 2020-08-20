@@ -1,31 +1,21 @@
-# -*- coding: utf-8 -*-
-import argparse
+from typing import List
 
-from pyscaffold.api import Extension, helpers
+from pyscaffold.actions import Action, ActionParams, ScaffoldOpts, Structure
+from pyscaffold.extensions import Extension, include
 from pyscaffold.extensions.no_skeleton import NoSkeleton
 from pyscaffold.extensions.pre_commit import PreCommit
+from pyscaffold.operations import no_overwrite
+from pyscaffold.structure import merge
 
-from pyscaffoldext.markdown.extension import MarkDown
+from pyscaffoldext.markdown import extension as markdown
 
-from . import templates
+from .templates import readme_md, template
 
-
-class IncludeExtensions(argparse.Action):
-    """Activate other extensions
-    """
-
-    def __call__(self, parser, namespace, values, option_string=None):
-        extensions = [
-            NoSkeleton("no_skeleton"),
-            PreCommit("pre_commit"),
-            DSProject("dsproject"),
-        ]
-        namespace.extensions.extend(extensions)
+NO_OVERWRITE = no_overwrite()
 
 
-class DSProject(Extension):
-    """Template for data-science projects
-    """
+class Dsproject(Extension):
+    """Template for data-science projects"""
 
     def augment_cli(self, parser):
         """Augments the command-line interface parser
@@ -38,87 +28,53 @@ class DSProject(Extension):
         Args:
             parser: current parser object
         """
-        help = self.__doc__[0].lower() + self.__doc__[1:]
 
         parser.add_argument(
-            self.flag, help=help, nargs=0, dest="extensions", action=IncludeExtensions
+            self.flag,
+            help=self.help_text,
+            nargs=0,
+            dest="extensions",
+            action=include(NoSkeleton(), PreCommit(), self),
         )
         return self
 
-    def activate(self, actions):
+    def activate(self, actions: List[Action]) -> List[Action]:
         actions = self.register(actions, add_dsproject, after="define_structure")
         actions = self.register(actions, replace_readme, after="add_dsproject")
         return actions
 
 
-def add_dsproject(struct, opts):
+def add_dsproject(struct: Structure, opts: ScaffoldOpts) -> ActionParams:
     """Adds basic module for custom extension
-
-    Args:
-        struct (dict): project representation as (possibly) nested
-            :obj:`dict`.
-        opts (dict): given options, see :obj:`create_project` for
-            an extensive list.
-
-    Returns:
-        struct, opts: updated project representation and options
+    See :obj:`pyscaffold.actions.Action`
     """
-    gitignore_all = templates.gitignore_all(opts)
+    gitignore_all = (template("gitignore_all"), NO_OVERWRITE)
 
-    path = [opts["project"], "data", ".gitignore"]
-    struct = helpers.ensure(
-        struct, path, templates.gitignore_data(opts), helpers.NO_OVERWRITE
-    )
-    for folder in ("external", "interim", "preprocessed", "raw"):
-        path = [opts["project"], "data", folder, ".gitignore"]
-        struct = helpers.ensure(struct, path, gitignore_all, helpers.NO_OVERWRITE)
+    files: Structure = {
+        "configs": {".gitignore": ("", NO_OVERWRITE)},
+        "data": {
+            ".gitignore": (template("gitignore_data"), NO_OVERWRITE),
+            **{
+                folder: {".gitignore": gitignore_all}
+                for folder in ("external", "interim", "preprocessed", "raw")
+            },
+        },
+        "environment.yaml": (template("environment_yaml"), NO_OVERWRITE),
+        "models": {".gitignore": gitignore_all},
+        "notebooks": {"template.ipynb": (template("template_ipynb"), NO_OVERWRITE)},
+        "references": {".gitignore": ("", NO_OVERWRITE)},
+        "reports": {"figures": {".gitignore": ("", NO_OVERWRITE)}},
+        "scripts": {"train_model.py": (template("train_model_py"), NO_OVERWRITE)},
+    }
 
-    path = [opts["project"], "notebooks", "template.ipynb"]
-    template_ipynb = templates.template_ipynb(opts)
-    struct = helpers.ensure(struct, path, template_ipynb, helpers.NO_OVERWRITE)
-
-    path = [opts["project"], "scripts", "train_model.py"]
-    train_model_py = templates.train_model_py(opts)
-    struct = helpers.ensure(struct, path, train_model_py, helpers.NO_OVERWRITE)
-
-    path = [opts["project"], "models", ".gitignore"]
-    struct = helpers.ensure(struct, path, gitignore_all, helpers.NO_OVERWRITE)
-
-    path = [opts["project"], "references", ".gitignore"]
-    struct = helpers.ensure(struct, path, "", helpers.NO_OVERWRITE)
-
-    path = [opts["project"], "reports", "figures", ".gitignore"]
-    struct = helpers.ensure(struct, path, "", helpers.NO_OVERWRITE)
-
-    path = [opts["project"], "environment.yaml"]
-    environment_yaml = templates.environment_yaml(opts)
-    struct = helpers.ensure(struct, path, environment_yaml, helpers.NO_OVERWRITE)
-
-    path = [opts["project"], "requirements.txt"]
-    struct = helpers.reject(struct, path)
-
-    path = [opts["project"], "configs", ".gitignore"]
-    struct = helpers.ensure(struct, path, "", helpers.NO_OVERWRITE)
-    return struct, opts
+    return merge(struct, files), opts
 
 
-def replace_readme(struct, opts):
+def replace_readme(struct: Structure, opts: ScaffoldOpts) -> ActionParams:
     """Replace the readme.md of the markdown extension by our own
-
-    Args:
-        struct (dict): project representation as (possibly) nested
-            :obj:`dict`.
-        opts (dict): given options, see :obj:`create_project` for
-            an extensive list.
-
-    Returns:
-        struct, opts: updated project representation and options
+    See :obj:`pyscaffold.actions.Action`
     """
-    # let the markdown extension do its job first
-    struct, opts = MarkDown("markdown").markdown(struct, opts)
-
-    file_path = [opts["project"], "README.md"]
-    struct = helpers.reject(struct, file_path)
-    readme = templates.readme_md(opts)
-    struct = helpers.ensure(struct, file_path, readme, helpers.NO_OVERWRITE)
-    return struct, opts
+    # Let the markdown extension do its job first
+    struct, opts = markdown.convert_files(struct, opts)
+    files: Structure = {"README.md": (readme_md, NO_OVERWRITE)}
+    return merge(struct, files), opts

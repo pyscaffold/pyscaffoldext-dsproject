@@ -28,6 +28,7 @@ Optional and needed only once after `git clone`:
 4. install several [pre-commit] git hooks with:
    ```
    pre-commit install
+   # You might also want to run `pre-commit autoupdate`
    ```
    and checkout the configuration under `.pre-commit-config.yaml`.
    The `-n, --no-verify` flag of `git commit` can be used to deactivate pre-commit hooks temporarily.
@@ -91,6 +92,8 @@ Then take a look into the `scripts` and `notebooks` folders.
 ├── .isort.cfg              <- Configuration for git hook that sorts imports.
 └── .pre-commit-config.yaml <- Configuration of pre-commit git hooks.
 ```
+
+<!-- pyscaffold-notes -->
 
 ## Note
 

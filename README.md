@@ -65,6 +65,29 @@ Creating a data science project is then as easy as:
 putup --dsproject my_ds_project
 ```
 
+
+<!-- pyscaffold-notes -->
+
+## Making Changes & Contributing
+
+This project uses [pre-commit], please make sure to install it before making any
+changes:
+
+```commandline
+pip install pre-commit
+cd pyscaffoldext-dsproject
+pre-commit install
+```
+
+It is a good idea to update the hooks to the latest version:
+
+```commandline
+pre-commit autoupdate
+```
+
+Please also check PyScaffold's [contribution guidelines].
+
+
 ## Note
 
 This project has been set up using PyScaffold 3.2. For details and usage
@@ -82,3 +105,5 @@ information on PyScaffold see https://pyscaffold.org/.
 [pre-commit]: https://pre-commit.com/
 [dvc]: https://dvc.org/
 [this blogpost]: https://florianwilhelm.info/2018/11/working_efficiently_with_jupyter_lab/
+[pre-commit]: http://pre-commit.com/
+[contribution guidelines]: https://pyscaffold.org/en/latest/contributing.html
