@@ -1,21 +1,25 @@
+import stat
 from typing import List
 
 from pyscaffold.actions import Action, ActionParams, ScaffoldOpts, Structure
 from pyscaffold.extensions import Extension, include
 from pyscaffold.extensions.no_skeleton import NoSkeleton
 from pyscaffold.extensions.pre_commit import PreCommit
-from pyscaffold.operations import no_overwrite
-from pyscaffold.structure import merge
+from pyscaffold.identification import get_id
+from pyscaffold.operations import add_permissions, no_overwrite
+from pyscaffold.structure import ensure, merge
 
-from pyscaffoldext.markdown import extension as markdown
+from pyscaffoldext.markdown.extension import Markdown, convert_files
 
 from .templates import readme_md, template
 
 NO_OVERWRITE = no_overwrite()
 
 
-class Dsproject(Extension):
+class DSProject(Extension):
     """Template for data-science projects"""
+
+    name = "dsproject"
 
     def augment_cli(self, parser):
         """Augments the command-line interface parser
@@ -39,8 +43,13 @@ class Dsproject(Extension):
         return self
 
     def activate(self, actions: List[Action]) -> List[Action]:
+        actions = Markdown().activate(actions)
+        # ^  Wrapping the Markdown extension is more reliable then including it via CLI.
+        #    This way we can trust the activation order for registering actions,
+        #    and the Python API is guaranteed to work, even if the user does not include
+        #    Markdown in the list of extensions.
         actions = self.register(actions, add_dsproject, after="define_structure")
-        actions = self.register(actions, replace_readme, after="add_dsproject")
+        actions = self.register(actions, replace_readme, after=get_id(convert_files))
         return actions
 
 
@@ -64,7 +73,12 @@ def add_dsproject(struct: Structure, opts: ScaffoldOpts) -> ActionParams:
         "notebooks": {"template.ipynb": (template("template_ipynb"), NO_OVERWRITE)},
         "references": {".gitignore": ("", NO_OVERWRITE)},
         "reports": {"figures": {".gitignore": ("", NO_OVERWRITE)}},
-        "scripts": {"train_model.py": (template("train_model_py"), NO_OVERWRITE)},
+        "scripts": {
+            "train_model.py": (
+                template("train_model_py"),
+                add_permissions(stat.S_IXUSR, NO_OVERWRITE),
+            )
+        },
     }
 
     return merge(struct, files), opts
@@ -74,7 +88,4 @@ def replace_readme(struct: Structure, opts: ScaffoldOpts) -> ActionParams:
     """Replace the readme.md of the markdown extension by our own
     See :obj:`pyscaffold.actions.Action`
     """
-    # Let the markdown extension do its job first
-    struct, opts = markdown.convert_files(struct, opts)
-    files: Structure = {"README.md": (readme_md, NO_OVERWRITE)}
-    return merge(struct, files), opts
+    return ensure(struct, "README.md", readme_md, NO_OVERWRITE), opts
