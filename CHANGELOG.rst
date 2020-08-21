@@ -2,6 +2,13 @@
 Changelog
 =========
 
+Version 0.5 (development)
+=========================
+
+- Updated to use PyScaffold v4 API
+- Updated Cirrus CI config file
+- Added new useful tasks to ``tox.ini``
+
 Version 0.4.1
 =============
 
