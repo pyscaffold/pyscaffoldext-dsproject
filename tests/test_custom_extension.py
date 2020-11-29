@@ -46,6 +46,22 @@ def test_add_custom_extension(tmpfolder):
             assert Path(path).is_file()
 
 
+def test_add_custom_extension_and_pretend(tmpfolder):
+    args = [
+        "--no-config",
+        "--pretend",
+        "-vv",
+        EXT_FLAG,
+        "my_project",
+        "-p",
+        "my_package",
+    ]
+    # --no-config: avoid extra config from dev's machine interference
+    cli.main(args)
+
+    assert not Path("my_project").exists()
+
+
 @pytest.mark.slow
 @pytest.mark.system
 def test_generated_extension(tmpfolder):
