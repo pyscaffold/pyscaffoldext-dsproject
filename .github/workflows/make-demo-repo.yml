@@ -38,7 +38,7 @@ jobs:
         git config --global user.name "John Doe"
         putup demo-dsproject --dsproject -d "Demonstration of a project generated with the Data Science project extension of PyScaffold" -u https://github.com/pyscaffold/pyscaffoldext-dsproject -l MIT
     - name: Push to dsproject-demo
-      if: ${{ steps.extract_branch.outputs.branch == 'master' }} # run only for tags on master branch
+      if: ${{ steps.extract_branch.outputs.branch }} == 'master'  # run only for tags on master branch
       uses: cpina/github-action-push-to-another-repository@master
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
