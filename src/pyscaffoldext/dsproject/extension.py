@@ -68,7 +68,7 @@ def add_dsproject(struct: Structure, opts: ScaffoldOpts) -> ActionParams:
                 for folder in ("external", "interim", "preprocessed", "raw")
             },
         },
-        "environment.yaml": (template("environment_yaml"), NO_OVERWRITE),
+        "environment.yml": (template("environment_yml"), NO_OVERWRITE),
         "models": {".gitignore": gitignore_all},
         "notebooks": {"template.ipynb": (template("template_ipynb"), NO_OVERWRITE)},
         "references": {".gitignore": ("", NO_OVERWRITE)},

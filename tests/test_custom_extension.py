@@ -26,7 +26,7 @@ EXPECTED_DIRS = [
 
 EXPECTED_FILES = [
     "README.md",
-    "environment.yaml",
+    "environment.yml",
     "notebooks/template.ipynb",
     "scripts/train_model.py",
     "src/my_package/__init__.py",
