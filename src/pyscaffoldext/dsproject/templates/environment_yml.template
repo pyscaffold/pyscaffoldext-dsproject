@@ -19,6 +19,7 @@ dependencies:
   - statsmodels
   - scikit-learn
   - pytorch
+  - yellowbrick
   - pip:
      # add here only pip-packages that are not available in conda/conda-forge! E.g.:
      - optuna
