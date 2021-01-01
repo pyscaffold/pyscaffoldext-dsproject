@@ -9,6 +9,7 @@ Version 0.5 (development)
 - Updated Cirrus CI config file
 - Added new useful tasks to ``tox.ini``
 - Renamed ``environment.yaml`` to ``environment.yml``
+- Added `Yellowbrick <https://www.scikit-yb.org/>`_ to ``environment.yaml``
 
 Version 0.4.1
 =============
