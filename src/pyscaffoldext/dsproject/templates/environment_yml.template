@@ -1,4 +1,4 @@
-name: ${project}
+name: ${name}
 channels:
   - defaults
   - conda-forge
