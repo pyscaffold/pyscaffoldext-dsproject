@@ -1,5 +1,5 @@
 [![Build Status](https://api.cirrus-ci.com/github/pyscaffold/pyscaffoldext-dsproject.svg?branch=master)](https://cirrus-ci.com/github/pyscaffold/pyscaffoldext-dsproject)
-[![ReadTheDocs](https://readthedocs.org/projects/pyscaffold/badge/?version=latest)](pyscaffoldext-dsproject.readthedocs.io)
+[![ReadTheDocs](https://readthedocs.org/projects/pyscaffold/badge/?version=latest)](https://pyscaffoldext-dsproject.readthedocs.io)
 [![Coveralls](https://img.shields.io/coveralls/github/pyscaffold/pyscaffoldext-dsproject/master.svg)](https://coveralls.io/r/pyscaffold/pyscaffoldext-dsproject)
 [![PyPI-Server](https://img.shields.io/pypi/v/pyscaffoldext-dsproject.svg)](https://pypi.org/project/pyscaffoldext-dsproject)
 [![Downloads](https://pepy.tech/badge/pyscaffoldext-dsproject/month)](https://pepy.tech/project/pyscaffoldext-dsproject)
