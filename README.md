@@ -61,7 +61,7 @@ the documentation of [PyScaffold] for more information.
 Just install this package with `pip install pyscaffoldext-dsproject`
 and note that `putup -h` shows a new option `--dsproject`.
 Creating a data science project is then as easy as:
-```
+```bash
 putup --dsproject my_ds_project
 ```
 
@@ -73,7 +73,7 @@ putup --dsproject my_ds_project
 This project uses [pre-commit], please make sure to install it before making any
 changes:
 
-```commandline
+```bash
 pip install pre-commit
 cd pyscaffoldext-dsproject
 pre-commit install
@@ -81,7 +81,7 @@ pre-commit install
 
 It is a good idea to update the hooks to the latest version:
 
-```commandline
+```bash
 pre-commit autoupdate
 ```
 
