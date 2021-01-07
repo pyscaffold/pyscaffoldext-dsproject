@@ -9,7 +9,7 @@ from pyscaffold.identification import get_id
 from pyscaffold.operations import add_permissions, no_overwrite
 from pyscaffold.structure import ensure, merge
 
-from pyscaffoldext.markdown.extension import Markdown, convert_files
+from pyscaffoldext.markdown.extension import Markdown, replace_files
 
 from .templates import readme_md, template
 
@@ -49,7 +49,7 @@ class DSProject(Extension):
         #    and the Python API is guaranteed to work, even if the user does not include
         #    Markdown in the list of extensions.
         actions = self.register(actions, add_dsproject, after="define_structure")
-        actions = self.register(actions, replace_readme, after=get_id(convert_files))
+        actions = self.register(actions, replace_readme, after=get_id(replace_files))
         return actions
 
 
