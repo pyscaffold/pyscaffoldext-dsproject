@@ -1,4 +1,5 @@
 [![Build Status](https://api.cirrus-ci.com/github/pyscaffold/pyscaffoldext-dsproject.svg?branch=master)](https://cirrus-ci.com/github/pyscaffold/pyscaffoldext-dsproject)
+[![ReadTheDocs](https://readthedocs.org/projects/pyscaffold/badge/?version=latest)](https://pyscaffoldext-dsproject.readthedocs.io)
 [![Coveralls](https://img.shields.io/coveralls/github/pyscaffold/pyscaffoldext-dsproject/master.svg)](https://coveralls.io/r/pyscaffold/pyscaffoldext-dsproject)
 [![PyPI-Server](https://img.shields.io/pypi/v/pyscaffoldext-dsproject.svg)](https://pypi.org/project/pyscaffoldext-dsproject)
 [![Downloads](https://pepy.tech/badge/pyscaffoldext-dsproject/month)](https://pepy.tech/project/pyscaffoldext-dsproject)
@@ -61,7 +62,7 @@ the documentation of [PyScaffold] for more information.
 Just install this package with `pip install pyscaffoldext-dsproject`
 and note that `putup -h` shows a new option `--dsproject`.
 Creating a data science project is then as easy as:
-```
+```bash
 putup --dsproject my_ds_project
 ```
 
@@ -73,7 +74,7 @@ putup --dsproject my_ds_project
 This project uses [pre-commit], please make sure to install it before making any
 changes:
 
-```commandline
+```bash
 pip install pre-commit
 cd pyscaffoldext-dsproject
 pre-commit install
@@ -81,7 +82,7 @@ pre-commit install
 
 It is a good idea to update the hooks to the latest version:
 
-```commandline
+```bash
 pre-commit autoupdate
 ```
 

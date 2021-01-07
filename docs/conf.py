@@ -46,7 +46,9 @@ except FileNotFoundError:
 try:
     import sphinx
 
-    cmd_line_template = "sphinx-apidoc -f -o {outputdir} {moduledir}"
+    cmd_line_template = (
+        "sphinx-apidoc --implicit-namespaces -f -o {outputdir} {moduledir}"
+    )
     cmd_line = cmd_line_template.format(outputdir=output_dir, moduledir=module_dir)
 
     args = cmd_line.split(" ")
@@ -76,13 +78,32 @@ extensions = [
     "sphinx.ext.ifconfig",
     "sphinx.ext.mathjax",
     "sphinx.ext.napoleon",
+    "sphinx.ext.extlinks",
+    "recommonmark",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
+# To configure AutoStructify
+def setup(app):
+    from recommonmark.transform import AutoStructify
+
+    params = {
+        "auto_toc_tree_section": "Contents",
+        "enable_eval_rst": True,
+        "enable_math": True,
+        "enable_inline_math": True,
+    }
+    app.add_config_value("recommonmark_config", params, True)
+    app.add_transform(AutoStructify)
+
+
+# Additional parsers besides rst
+source_parsers = {".md": "recommonmark.parser.CommonMarkParser"}
+
 # The suffix of source filenames.
-source_suffix = ".rst"
+source_suffix = [".rst", ".md"]
 
 # The encoding of source files.
 # source_encoding = 'utf-8-sig'
@@ -145,14 +166,14 @@ pygments_style = "sphinx"
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = "alabaster"
+html_theme = "sphinx_rtd_theme"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    "sidebar_width": "300px",
-    "page_width": "1200px"
+#   "sidebar_width": "300px",
+#   "page_width": "1200px"
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
