@@ -2,14 +2,14 @@
 Changelog
 =========
 
-Version 0.5 (development)
-=========================
+Version 0.5
+===========
 
 - Updated to use PyScaffold v4 API
 - Updated Cirrus CI config file
 - Added new useful tasks to ``tox.ini``
 - Renamed ``environment.yaml`` to ``environment.yml``
-- Added `Yellowbrick <https://www.scikit-yb.org/>`_ to ``environment.yaml``
+- Added `Yellowbrick <https://www.scikit-yb.org/>`_ to ``environment.yml``
 
 Version 0.4.1
 =============
