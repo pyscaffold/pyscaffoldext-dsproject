@@ -1,14 +1,18 @@
+import logging
 import os
 import shlex
 import stat
 import sys
 import traceback
 from pathlib import Path
-from shutil import rmtree
+from importlib.util import find_spec
+from shutil import rmtree, which
 from subprocess import STDOUT, CalledProcessError, check_output
 from time import sleep
 from uuid import uuid4
 from warnings import warn
+
+import pytest
 
 from pyscaffold.shell import get_executable
 
@@ -107,3 +111,19 @@ def run_common_tasks(tests=True, docs=True, pre_commit=True, install=True):
         venv_pip = get_executable("pip", prefix=".venv", include_path=False)
         assert venv_pip, "Pip not found, make sure you have used the --venv option"
         run(venv_pip, "install", wheels[0])
+
+
+def find_package_bin(package, binary=None):
+    """If a ``package`` can be executed via ``python -m`` (with the current python)
+    try to do that, otherwise use ``binary`` on the $PATH"""
+    binary = binary or package
+    if find_spec(package):
+        return f"{PYTHON} -m {package}"
+
+    executable = which(binary)
+    if executable:
+        msg = "Package %s can not be found inside %s, using system executable %s"
+        logging.critical(msg, package, sys.prefix, executable)
+        return executable
+
+    pytest.skip(f"For some reason {binary} cannot be found.")

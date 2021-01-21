@@ -6,7 +6,7 @@ import os
 
 import pytest
 
-from .helpers import rmpath, uniqstr
+from .helpers import rmpath, uniqstr, find_package_bin
 
 
 @pytest.fixture
@@ -20,3 +20,20 @@ def tmpfolder(tmp_path):
     finally:
         os.chdir(old_path)
         rmpath(new_path)
+
+
+@pytest.fixture(autouse=True)
+def cwd(tmpdir):
+    """Guarantee a blank folder as workspace"""
+    with tmpdir.as_cwd():
+        yield tmpdir
+
+
+@pytest.fixture
+def pre_commit():
+    return find_package_bin("pre_commit", "pre-commit")
+
+
+@pytest.fixture
+def putup():
+    return find_package_bin("pyscaffold.cli", "putup")
