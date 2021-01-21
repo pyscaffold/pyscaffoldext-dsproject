@@ -20,8 +20,8 @@ data science project structure like this.
 
 The final directory structure looks like:
 ```
-├── AUTHORS.rst             <- List of developers and maintainers.
-├── CHANGELOG.rst           <- Changelog to keep track of new features and fixes.
+├── AUTHORS.md              <- List of developers and maintainers.
+├── CHANGELOG.md            <- Changelog to keep track of new features and fixes.
 ├── LICENSE.txt             <- License as chosen on the command-line.
 ├── README.md               <- The top-level README for developers.
 ├── configs                 <- Directory for configurations of model & application.
