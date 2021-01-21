@@ -82,9 +82,7 @@ def test_new_project_does_not_fail_pre_commit(cwd, pre_commit, putup):
     # Given pyscaffold is installed,
     # when we call putup with extensions and pre-commit
     name = "my_project"
-    run(
-        f"{putup} --pre-commit --dsproject -p my_package {name}"
-    )
+    run(f"{putup} --pre-commit --dsproject -p my_package {name}")
     with cwd.join(name).as_cwd():
         # then the newly generated files should not result in errors when
         # pre-commit runs...

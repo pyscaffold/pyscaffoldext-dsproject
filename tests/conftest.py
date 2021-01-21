@@ -6,7 +6,7 @@ import os
 
 import pytest
 
-from .helpers import rmpath, uniqstr, find_package_bin
+from .helpers import find_package_bin, rmpath, uniqstr
 
 
 @pytest.fixture

@@ -4,8 +4,8 @@ import shlex
 import stat
 import sys
 import traceback
-from pathlib import Path
 from importlib.util import find_spec
+from pathlib import Path
 from shutil import rmtree, which
 from subprocess import STDOUT, CalledProcessError, check_output
 from time import sleep
@@ -13,7 +13,6 @@ from uuid import uuid4
 from warnings import warn
 
 import pytest
-
 from pyscaffold.shell import get_executable
 
 IS_POSIX = os.name == "posix"
