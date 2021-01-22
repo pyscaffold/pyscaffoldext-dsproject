@@ -2,6 +2,12 @@
 Changelog
 =========
 
+Version 0.5.1
+=============
+
+- Fix ``isort`` when namespaces are used
+- Fix wrongs docs, i.e. rst -> md
+
 Version 0.5
 ===========
 
