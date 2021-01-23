@@ -3,10 +3,11 @@ channels:
   - defaults
   - conda-forge
   - pytorch
+  # - fastai
 dependencies:
   - python>=3.6
   - pip
-  # BASIC
+  # BASICS
   - numpy
   - scipy
   - pandas
@@ -26,7 +27,7 @@ dependencies:
   # - catboost
   # - lightgbm
   # - pytorch
-  # - fastai
+  # - fastai  # activate fastai channel above!
   # - tensorflow
   # - keras
   # - spacy
