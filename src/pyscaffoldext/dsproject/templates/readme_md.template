@@ -21,6 +21,8 @@ In order to set up the necessary environment:
 
 > **_NOTE:_**  The conda environment will have ${name} installed in editable mode.
 > Some changes, e.g. in `setup.cfg`, might require you to run `pip install -e .` again.
+> Be aware that `environment.yml` contains quite many data science related packages, thus
+> commenting all those which are not needed before creating the environment saves you some time and space.
 
 
 Optional and needed only once after `git clone`:

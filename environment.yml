@@ -22,4 +22,4 @@ dependencies:
   - pip:
       - pyscaffold
       - sphinx_rtd_theme  # to build docs locally
-      - -e .[testing]  # install git checkout of PyScaffold in editable mode
+      - -e .  # install git checkout of PyScaffold in editable mode
