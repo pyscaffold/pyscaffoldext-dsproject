@@ -2,6 +2,12 @@
 Changelog
 =========
 
+Version 0.6
+===========
+
+* Curated the list of packages in ``environment.yml``
+* Editable install of package direclty in ``environment.yml``
+
 Version 0.5.1
 =============
 
