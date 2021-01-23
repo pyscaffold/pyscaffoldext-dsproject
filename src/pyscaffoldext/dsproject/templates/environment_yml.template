@@ -13,6 +13,7 @@ dependencies:
   - pandas
   - tqdm
   - click
+  - ipython
   # VISUALIZATION
   - matplotlib
   - seaborn
