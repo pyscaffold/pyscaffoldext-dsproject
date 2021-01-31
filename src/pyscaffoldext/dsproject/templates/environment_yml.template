@@ -16,6 +16,7 @@ dependencies:
   - ipython
   # VISUALIZATION
   - matplotlib
+  - ipympl  # interactive matplotlib plots
   - seaborn
   # - altair
   # - yellowbrick
@@ -35,6 +36,7 @@ dependencies:
   # OTHER TOOLS
   # - optuna
   # - dask
+  # - snakeviz
   - pip:
      - -e .  # install git checkout of ${name} in editable mode
      # add here only pip-packages that are not available in conda/conda-forge! E.g.:
