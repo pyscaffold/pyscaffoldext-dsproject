@@ -2,6 +2,7 @@
 [![ReadTheDocs](https://readthedocs.org/projects/pyscaffold/badge/?version=latest)](https://pyscaffoldext-dsproject.readthedocs.io)
 [![Coveralls](https://img.shields.io/coveralls/github/pyscaffold/pyscaffoldext-dsproject/master.svg)](https://coveralls.io/r/pyscaffold/pyscaffoldext-dsproject)
 [![PyPI-Server](https://img.shields.io/pypi/v/pyscaffoldext-dsproject.svg)](https://pypi.org/project/pyscaffoldext-dsproject)
+[![Conda-Forge](https://img.shields.io/conda/vn/conda-forge/pyscaffoldext-dsproject.svg)
 [![Downloads](https://pepy.tech/badge/pyscaffoldext-dsproject/month)](https://pepy.tech/project/pyscaffoldext-dsproject)
 
 # pyscaffoldext-dsproject
@@ -59,7 +60,7 @@ the documentation of [PyScaffold] for more information.
 
 ## Usage
 
-Just install this package with `pip install pyscaffoldext-dsproject`
+Just install this package with `conda install -c conda-forge pyscaffoldext-dsproject`
 and note that `putup -h` shows a new option `--dsproject`.
 Creating a data science project is then as easy as:
 ```bash
@@ -75,7 +76,7 @@ This project uses [pre-commit], please make sure to install it before making any
 changes:
 
 ```bash
-pip install pre-commit
+conda install pre-commit
 cd pyscaffoldext-dsproject
 pre-commit install
 ```
@@ -102,6 +103,7 @@ information on PyScaffold see https://pyscaffold.org/.
 [Sphinx]: http://www.sphinx-doc.org/
 [py.test]: https://docs.pytest.org/
 [conda]: https://docs.conda.io/
+[Conda-Forge]: https://anaconda.org/conda-forge/pyscaffoldext-dsproject
 [virtualenv]: https://virtualenv.pypa.io/
 [pre-commit]: https://pre-commit.com/
 [dvc]: https://dvc.org/
