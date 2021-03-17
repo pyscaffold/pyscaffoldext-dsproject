@@ -81,10 +81,10 @@ Then take a look into the `scripts` and `notebooks` folders.
 ├── reports                 <- Generated analysis as HTML, PDF, LaTeX, etc.
 │   └── figures             <- Generated plots and figures for reports.
 ├── scripts                 <- Analysis and production scripts which import the
-│                              actual PYTHON_PKG, e.g. train_model.
+│                              actual Python package, e.g. train_model.py.
 ├── setup.cfg               <- Declarative configuration of your project.
-├── setup.py                <- Use `python setup.py develop` to install for development or
-|                              or create a distribution with `python setup.py bdist_wheel`.
+├── setup.py                <- Use `pip install -e .` to install for development or
+|                              or create a distribution with `tox -e build`.
 ├── src
 │   └── ${pkg} <- Actual Python package where the main functionality goes.
 ├── tests                   <- Unit tests which can be run with `py.test`.
@@ -97,12 +97,12 @@ Then take a look into the `scripts` and `notebooks` folders.
 
 ## Note
 
-This project has been set up using PyScaffold ${version} and the [dsproject extension] ${dsproject_version}.
-For details and usage information on PyScaffold see https://pyscaffold.org/.
+This project has been set up using [PyScaffold] ${version} and the [dsproject extension] ${dsproject_version}.
 
 [conda]: https://docs.conda.io/
 [pre-commit]: https://pre-commit.com/
 [Jupyter]: https://jupyter.org/
 [nbstripout]: https://github.com/kynan/nbstripout
 [Google style]: http://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings
+[PyScaffold]: https://pyscaffold.org/
 [dsproject extension]: https://github.com/pyscaffold/pyscaffoldext-dsproject
