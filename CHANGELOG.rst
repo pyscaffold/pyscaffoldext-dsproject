@@ -2,11 +2,18 @@
 Changelog
 =========
 
+
+Version 0.6.1
+=============
+
+- Latest updates from PyScaffold
+- Fix ``KeyError: 'long-description'``, issue #20
+
 Version 0.6
 ===========
 
-* Curated the list of packages in ``environment.yml``
-* Editable install of package direclty in ``environment.yml``
+- Curated the list of packages in ``environment.yml``
+- Editable install of package direclty in ``environment.yml``
 
 Version 0.5.1
 =============
