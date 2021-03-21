@@ -45,7 +45,7 @@ The final directory structure looks like:
 │                              actual PYTHON_PKG, e.g. train_model.
 ├── setup.cfg               <- Declarative configuration of your project.
 ├── setup.py                <- Use `python setup.py develop` to install for development or
-|                              or create a distribution with `python setup.py bdist_wheel`.
+│                              or create a distribution with `python setup.py bdist_wheel`.
 ├── src
 │   └── PYTHON_PKG          <- Actual Python package where the main functionality goes.
 ├── tests                   <- Unit tests which can be run with `py.test`.
