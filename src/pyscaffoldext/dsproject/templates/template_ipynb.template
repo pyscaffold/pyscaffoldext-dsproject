@@ -6,6 +6,15 @@
    "metadata": {},
    "outputs": [],
    "source": [
+    "%run ./config.ipynb"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
     "import os\n",
     "import sys\n",
     "import math\n",
@@ -14,28 +23,18 @@
     "\n",
     "import numpy as np\n",
     "import scipy as sp\n",
+    "\n",
     "import sklearn\n",
+    "\n",
     "import statsmodels.api as sm\n",
     "from statsmodels.formula.api import ols\n",
     "\n",
-    "%load_ext autoreload\n",
-    "%autoreload 2\n",
-    "\n",
     "import matplotlib as mpl\n",
     "import matplotlib.pyplot as plt\n",
-    "%matplotlib inline\n",
-    "%config InlineBackend.figure_format = 'retina'\n",
     "\n",
     "import seaborn as sns\n",
-    "sns.set_context(\"poster\")\n",
-    "sns.set(rc={\"figure.figsize\": (16, 9.)})\n",
-    "sns.set_style(\"whitegrid\")\n",
     "\n",
-    "import pandas as pd\n",
-    "pd.set_option(\"display.max_rows\", 120)\n",
-    "pd.set_option(\"display.max_columns\", 120)\n",
-    "\n",
-    "logging.basicConfig(level=logging.INFO, stream=sys.stdout)"
+    "import pandas as pd"
    ]
   },
   {
@@ -78,7 +77,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.7.3"
+   "version": "3.9.1"
   },
   "pycharm": {
    "stem_cell": {
@@ -91,5 +90,5 @@
   }
  },
  "nbformat": 4,
- "nbformat_minor": 2
+ "nbformat_minor": 4
 }
