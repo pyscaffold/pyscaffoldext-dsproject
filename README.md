@@ -1,5 +1,5 @@
 [![Build Status](https://api.cirrus-ci.com/github/pyscaffold/pyscaffoldext-dsproject.svg?branch=master)](https://cirrus-ci.com/github/pyscaffold/pyscaffoldext-dsproject)
-[![ReadTheDocs](https://readthedocs.org/projects/pyscaffold/badge/?version=latest)](https://pyscaffoldext-dsproject.readthedocs.io)
+[![ReadTheDocs](https://readthedocs.org/projects/pyscaffold/badge/?version=latest)](https://pyscaffold.org/projects/dsproject/en/latest)
 [![Coveralls](https://img.shields.io/coveralls/github/pyscaffold/pyscaffoldext-dsproject/master.svg)](https://coveralls.io/r/pyscaffold/pyscaffoldext-dsproject)
 [![PyPI-Server](https://img.shields.io/pypi/v/pyscaffoldext-dsproject.svg)](https://pypi.org/project/pyscaffoldext-dsproject)
 [![Conda-Forge](https://img.shields.io/conda/vn/conda-forge/pyscaffoldext-dsproject.svg)](https://anaconda.org/conda-forge/pyscaffoldext-dsproject)
@@ -100,7 +100,7 @@ information on PyScaffold see https://pyscaffold.org/.
 [Miniconda]: https://docs.conda.io/en/latest/miniconda.html
 [Jupyter]: https://jupyter.org/
 [dsproject-demo]: https://github.com/pyscaffold/dsproject-demo
-[Sphinx]: http://www.sphinx-doc.org/
+[Sphinx]: https://www.sphinx-doc.org/
 [py.test]: https://docs.pytest.org/
 [conda]: https://docs.conda.io/
 [Conda-Forge]: https://anaconda.org/conda-forge/pyscaffoldext-dsproject
@@ -108,5 +108,5 @@ information on PyScaffold see https://pyscaffold.org/.
 [pre-commit]: https://pre-commit.com/
 [dvc]: https://dvc.org/
 [this blogpost]: https://florianwilhelm.info/2018/11/working_efficiently_with_jupyter_lab/
-[pre-commit]: http://pre-commit.com/
+[pre-commit]: https://pre-commit.com/
 [contribution guidelines]: https://pyscaffold.org/en/latest/contributing.html
