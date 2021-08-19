@@ -88,15 +88,16 @@ Then take a look into the `scripts` and `notebooks` folders.
 ├── notebooks               <- Jupyter notebooks. Naming convention is a number (for
 │                              ordering), the creator's initials and a description,
 │                              e.g. `1.0-fw-initial-data-exploration`.
-├── pyproject.toml          <- Build system configuration. Do not change!
+├── pyproject.toml          <- Build configuration. Don't change! Use `pip install -e .`
+│                              to install for development or to build `tox -e build`.
 ├── references              <- Data dictionaries, manuals, and all other materials.
 ├── reports                 <- Generated analysis as HTML, PDF, LaTeX, etc.
 │   └── figures             <- Generated plots and figures for reports.
 ├── scripts                 <- Analysis and production scripts which import the
-│                              actual Python package, e.g. train_model.py.
+│                              actual PYTHON_PKG, e.g. train_model.
 ├── setup.cfg               <- Declarative configuration of your project.
-├── setup.py                <- Use `pip install -e .` to install for development or
-│                              create a distribution with `tox -e build`.
+├── setup.py                <- [DEPRECATED] Use `python setup.py develop` to install for
+│                              development or `python setup.py bdist_wheel` to build.
 ├── src
 │   └── ${pkg} <- Actual Python package where the main functionality goes.
 ├── tests                   <- Unit tests which can be run with `pytest`.

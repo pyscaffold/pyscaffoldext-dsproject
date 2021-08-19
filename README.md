@@ -38,14 +38,16 @@ The final directory structure looks like:
 ├── notebooks               <- Jupyter notebooks. Naming convention is a number (for
 │                              ordering), the creator's initials and a description,
 │                              e.g. `1.0-fw-initial-data-exploration`.
+├── pyproject.toml          <- Build configuration. Don't change! Use `pip install -e .`
+│                              to install for development or to build `tox -e build`.
 ├── references              <- Data dictionaries, manuals, and all other materials.
 ├── reports                 <- Generated analysis as HTML, PDF, LaTeX, etc.
 │   └── figures             <- Generated plots and figures for reports.
 ├── scripts                 <- Analysis and production scripts which import the
 │                              actual PYTHON_PKG, e.g. train_model.
 ├── setup.cfg               <- Declarative configuration of your project.
-├── setup.py                <- Use `python setup.py develop` to install for development or
-│                              create a distribution with `python setup.py bdist_wheel`.
+├── setup.py                <- [DEPRECATED] Use `python setup.py develop` to install for
+│                              development or `python setup.py bdist_wheel` to build.
 ├── src
 │   └── PYTHON_PKG          <- Actual Python package where the main functionality goes.
 ├── tests                   <- Unit tests which can be run with `pytest`.
