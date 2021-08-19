@@ -12,7 +12,7 @@
 1. advocates a proper Python package structure that can be shipped and distributed,
 2. uses a [conda] environment instead of something [virtualenv]-based and is thus more suitable
    for data science projects,
-3. more default configurations for [Sphinx], [py.test], [pre-commit], etc. to foster
+3. more default configurations for [Sphinx], [pytest], [pre-commit], etc. to foster
    clean coding and best practices.
 
 Also consider using [dvc] to version control and share your data within your team.
@@ -48,7 +48,7 @@ The final directory structure looks like:
 │                              create a distribution with `python setup.py bdist_wheel`.
 ├── src
 │   └── PYTHON_PKG          <- Actual Python package where the main functionality goes.
-├── tests                   <- Unit tests which can be run with `py.test`.
+├── tests                   <- Unit tests which can be run with `pytest`.
 ├── .coveragerc             <- Configuration for coverage reports of unit tests.
 ├── .isort.cfg              <- Configuration for git hook that sorts imports.
 └── .pre-commit-config.yaml <- Configuration of pre-commit git hooks.
@@ -101,7 +101,7 @@ information on PyScaffold see https://pyscaffold.org/.
 [Jupyter]: https://jupyter.org/
 [dsproject-demo]: https://github.com/pyscaffold/dsproject-demo
 [Sphinx]: https://www.sphinx-doc.org/
-[py.test]: https://docs.pytest.org/
+[pytest]: https://docs.pytest.org/
 [conda]: https://docs.conda.io/
 [Conda-Forge]: https://anaconda.org/conda-forge/pyscaffoldext-dsproject
 [virtualenv]: https://virtualenv.pypa.io/
