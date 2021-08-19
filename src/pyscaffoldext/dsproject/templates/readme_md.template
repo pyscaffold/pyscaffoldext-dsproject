@@ -99,7 +99,7 @@ Then take a look into the `scripts` and `notebooks` folders.
 │                              create a distribution with `tox -e build`.
 ├── src
 │   └── ${pkg} <- Actual Python package where the main functionality goes.
-├── tests                   <- Unit tests which can be run with `py.test`.
+├── tests                   <- Unit tests which can be run with `pytest`.
 ├── .coveragerc             <- Configuration for coverage reports of unit tests.
 ├── .isort.cfg              <- Configuration for git hook that sorts imports.
 └── .pre-commit-config.yaml <- Configuration of pre-commit git hooks.
