@@ -1,0 +1,44 @@
+# Dockerfile
+# * builder steps:
+#  - create environment and build package
+#  - save environment for runner
+# * runner steps:
+#  - recreate the same environment and install built package
+#  - optionally execute provided console_script in ENTRYPOINT
+#
+# Alternatively, remove builder steps, take `environment.lock.yml` from your repo
+# and `pip install ${name}` using an artifact store. Faster and more robust.
+
+FROM condaforge/miniforge3 AS builder
+WORKDIR /tmp
+
+COPY . /tmp
+RUN conda env create -f environment.yml
+# RUN pip install -e . # not needed since it's in environment.yml
+SHELL ["conda", "run", "-n", "${name}", "/bin/bash", "-c"]
+
+# build package
+RUN tox -e build
+RUN conda env export -n ${name} -f environment.lock.yml
+
+FROM condaforge/miniforge3 AS runner
+WORKDIR /app
+
+COPY --from=builder /tmp/environment.lock.yml environment.yml
+COPY --from=builder /tmp/dist/*.whl /tmp
+
+RUN conda env create -f environment.yml
+
+# Create default pip.conf.
+# Replace value of `index-url` with your artifact store if needed.
+RUN echo "[global]\n" \
+         "timeout = 60\n" \
+         "index-url = https://pypi.org/simple/\n" > /etc/pip.conf
+
+# Make RUN commands use the conda environment
+SHELL ["conda", "run", "-n", "${name}", "/bin/bash", "-c"]
+
+RUN pip install /tmp/*.whl
+
+# Code to run when container is started
+# ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "${name}", "YOUR_CONSOLE_SCRIPT"]
