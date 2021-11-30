@@ -234,7 +234,7 @@ docker_builder:
   prepare_script: *prepare
   pyscaffold_script:
     - pip install -e .
-    - putup --dsproject test_project
+    - putup --dsproject /tmp/test_project
   build_script:
-    - cd test_project
+    - cd /tmp/test_project
     - docker build .
