@@ -6,28 +6,36 @@
 #  - recreate the same environment and install built package
 #  - optionally execute provided console_script in ENTRYPOINT
 #
-# Alternatively, remove builder steps, take `environment.lock.yml` from your repo
+# Alternatively, remove builder steps, take `environment.docker.yml` from your repo
 # and `pip install ${name}` using an artifact store. Faster and more robust.
 
 FROM condaforge/miniforge3 AS builder
 WORKDIR /tmp
 
 COPY . /tmp
-RUN conda env create -f environment.yml
+
+RUN conda install mamba -n base
+RUN mamba env create -f environment.yml
 # RUN pip install -e . # not needed since it's in environment.yml
-SHELL ["conda", "run", "-n", "${name}", "/bin/bash", "-c"]
+SHELL ["mamba", "run", "-n", "${name}", "/bin/bash", "-c"]
 
 # build package
 RUN tox -e build
-RUN conda env export -n ${name} -f environment.lock.yml
+RUN mamba env export -n ${name} -f environment.docker.yml
 
 FROM condaforge/miniforge3 AS runner
 WORKDIR /app
 
-COPY --from=builder /tmp/environment.lock.yml environment.yml
+# copy caches, environment.yml and built package
+COPY --from=builder /root/.cache/pip /root/.cache/pip
+COPY --from=builder /opt/conda/pkgs /opt/conda/pkgs
+COPY --from=builder /tmp/environment.docker.yml environment.yml
 COPY --from=builder /tmp/dist/*.whl /tmp
 
-RUN conda env create -f environment.yml
+RUN conda install mamba -n base -y
+RUN mamba env create -f environment.yml
+RUN mamba clean --packages --yes
+RUN rm -rf /root/.cache/pip
 
 # Create default pip.conf.
 # Replace value of `index-url` with your artifact store if needed.
