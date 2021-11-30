@@ -2,6 +2,10 @@
 Changelog
 =========
 
+Version 0.7
+===========
+
+- Added a ``Dockerfile`` to the project structure
 
 Version 0.6.1
 =============
