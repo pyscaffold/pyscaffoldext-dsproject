@@ -32,6 +32,9 @@ COPY --from=builder /opt/conda/pkgs /opt/conda/pkgs
 COPY --from=builder /tmp/environment.docker.yml environment.yml
 COPY --from=builder /tmp/dist/*.whl /tmp
 
+RUN useradd -u 1001 -m app && usermod -aG app app
+USER app
+
 RUN conda install mamba -n base -y
 RUN mamba env create -f environment.yml
 RUN mamba clean --packages --yes
