@@ -51,5 +51,6 @@ SHELL ["conda", "run", "-n", "${name}", "/bin/bash", "-c"]
 
 RUN pip install /tmp/*.whl
 
-# Code to run when container is started
+# Code to run when container is started. Replace `YOUR_CONSOLE_SCRIPT` with the
+# value of `console_scripts` in section `[options.entry_points]` of `setup.cfg`.
 # ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "${name}", "YOUR_CONSOLE_SCRIPT"]
