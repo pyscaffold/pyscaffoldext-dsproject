@@ -23,6 +23,7 @@ The final directory structure looks like:
 ```
 ├── AUTHORS.md              <- List of developers and maintainers.
 ├── CHANGELOG.md            <- Changelog to keep track of new features and fixes.
+├── CONTRIBUTING.md         <- Guidelines for contributing to this project.
 ├── Dockerfile              <- Build a docker container with `docker build .`.
 ├── LICENSE.txt             <- License as chosen on the command-line.
 ├── README.md               <- The top-level README for developers.
@@ -91,12 +92,6 @@ pre-commit autoupdate
 ```
 
 Please also check PyScaffold's [contribution guidelines].
-
-
-## Note
-
-This project has been set up using PyScaffold 3.2. For details and usage
-information on PyScaffold see https://pyscaffold.org/.
 
 [PyScaffold]: https://pyscaffold.org/
 [cookiecutter-data-science]: https://github.com/drivendata/cookiecutter-data-science
