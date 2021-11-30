@@ -222,3 +222,19 @@ linkcheck_task:
   prepare_script: *prepare
   linkcheck_script:
     - python -m tox -e linkcheck -- -q
+
+
+docker_builder:
+  name: test (docker build)
+  env:
+    HOME: /root
+  clone_script: *clone
+  pip_cache: *pip-cache
+  install_script: *debian-install
+  prepare_script: *prepare
+  pyscaffold_script:
+    - pip install -e .
+    - putup --dsproject test_project
+  build_script:
+    - cd test_project
+    - docker build .
