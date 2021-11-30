@@ -26,7 +26,7 @@ RUN mamba env export -n ${name} -f environment.docker.yml
 FROM condaforge/miniforge3 AS runner
 WORKDIR /app
 
-# copy caches, environment.yml and built package
+# Copy caches, environment.docker.yml and built package
 COPY --from=builder /root/.cache/pip /root/.cache/pip
 COPY --from=builder /opt/conda/pkgs /opt/conda/pkgs
 COPY --from=builder /tmp/environment.docker.yml environment.yml
