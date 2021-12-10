@@ -13,12 +13,13 @@ FROM condaforge/mambaforge AS builder
 WORKDIR /root
 
 COPY . /root
+RUN rm -rf dist build
 
 RUN mamba env create -f environment.yml
 # RUN pip install -e . # not needed since it's in environment.yml
 SHELL ["mamba", "run", "-n", "${name}", "/bin/bash", "-c"]
 
-# build package
+# Build package
 RUN tox -e build
 RUN mamba env export -n ${name} -f environment.docker.yml
 
@@ -54,6 +55,9 @@ RUN rm -rf /home/app/.cache/pip
 SHELL ["conda", "run", "-n", "${name}", "/bin/bash", "-c"]
 
 RUN pip install ./*.whl
+
+# Expose a port for a web-service for instance.
+# EXPOSE 80/tcp
 
 # Code to run when container is started. Replace `YOUR_CONSOLE_SCRIPT` with the
 # value of `console_scripts` in section `[options.entry_points]` of `setup.cfg`.
