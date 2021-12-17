@@ -11,9 +11,7 @@
 
 # ${name}
 
-${description}
-
-## Description
+> ${description}
 
 A longer description of your project goes here...
 

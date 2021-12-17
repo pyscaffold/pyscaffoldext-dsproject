@@ -2,6 +2,12 @@
 Changelog
 =========
 
+Version 0.7.1
+=============
+
+- Remove separate Description section in README.md
+- Remove old wheels in ``Dockerfile`` and have a comment about ``EXPOSE``.
+
 Version 0.7
 ===========
 
