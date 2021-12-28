@@ -230,10 +230,17 @@ docker_builder:
     HOME: /root
   clone_script: *clone
   pip_cache: *pip-cache
-  install_script: *debian-install
+  install_script:
+    - apt-get install -y git
+    - curl -L -O https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+    - bash Miniforge3-Linux-x86_64.sh -b
+    - source /root/miniforge3/bin/activate
+    - conda init
   prepare_script: *prepare
   pyscaffold_script:
-    - pip install -e .
+    - source /root/miniforge3/bin/activate
+    - conda env create -f environment.yml
+    - conda activate pyscaffold
     - putup --dsproject /tmp/test_project
   build_script:
     - cd /tmp/test_project
