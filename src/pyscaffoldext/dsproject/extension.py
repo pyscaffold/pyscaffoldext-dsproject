@@ -65,7 +65,7 @@ def add_dsproject(struct: Structure, opts: ScaffoldOpts) -> ActionParams:
             ".gitignore": (template("gitignore_data"), NO_OVERWRITE),
             **{
                 folder: {".gitignore": gitignore_all}
-                for folder in ("external", "interim", "preprocessed", "raw")
+                for folder in ("external", "interim", "processed", "raw")
             },
         },
         "Dockerfile": (template("Dockerfile"), NO_OVERWRITE),

@@ -20,7 +20,7 @@ EXPECTED_DIRS = [
     "configs",
     "data/external",
     "data/interim",
-    "data/preprocessed",
+    "data/processed",
     "data/raw",
     "models",
     "reports/figures",
