@@ -38,13 +38,14 @@ jobs:
         echo -e "[![ReadTheDocs](https://readthedocs.org/projects/dsproject-demo/badge/?version=latest)](https://dsproject-demo.readthedocs.io/)\n$(cat README.md)" > README.md
         git commit -a -m "Added ReadTheDocs Badge"
     - name: Push to dsproject-demo
-      uses: cpina/github-action-push-to-another-repository@master
+      uses: cpina/github-action-push-to-another-repository@devel
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source-directory: "demo-dsproject"
+        source-directory: "demo-dsproject/"
         destination-github-username: "FlorianWilhelm"
         destination-repository-username: "pyscaffold"
         destination-repository-name: "dsproject-demo"
         user-email: florian.wilhelm@gmail.com
         commit-message: "Initial commit"
+        target-branch: master
