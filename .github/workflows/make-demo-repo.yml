@@ -36,7 +36,7 @@ jobs:
         putup demo-dsproject --dsproject -d "Demonstration of a project generated with the Data Science project extension of PyScaffold" -u https://github.com/pyscaffold/pyscaffoldext-dsproject -l MIT
         cd demo-dsproject
         echo -e "[![ReadTheDocs](https://readthedocs.org/projects/dsproject-demo/badge/?version=latest)](https://dsproject-demo.readthedocs.io/)\n$(cat README.md)" > README.md
-        git commit -a -m "Added ReadTheDocs Badge"
+        rm -rf .git # for github-action-push-to-another-repository to work
     - name: Push to dsproject-demo
       uses: cpina/github-action-push-to-another-repository@devel
       env:
