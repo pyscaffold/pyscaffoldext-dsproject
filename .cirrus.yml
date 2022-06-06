@@ -186,17 +186,12 @@ windows_task:
 
 
 coverage_task:
-  name: coverage (Linux - 3.6)
+  name: coverage (Linux - 3.10)
   clone_script: *clone
-  container: {image: "python:3.6-buster"}
+  container: {image: "python:3.10-bullseye"}
   env:
     COVERAGE: yes
-  depends_on:
-    - test (Linux - 3.6)
-    - test (Linux - 3.7)
-    - test (Linux - 3.8)
-    - test (Linux - Anaconda)
-    - test (OS X)
+  depends_on: [test]
   install_script: *debian-install
   pip_install_script:
     pip install --user --upgrade coverage coveralls pre-commit
