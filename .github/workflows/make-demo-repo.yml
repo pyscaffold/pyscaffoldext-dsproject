@@ -13,34 +13,36 @@ jobs:
         shell: bash -l {0}
     steps:
     - name: Checkout Repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
+        path: ./repo
         fetch-depth: 0  # avoids shallow checkout as needed by setuptools-scm
     - name: Set up Conda environment
       uses: conda-incubator/setup-miniconda@v2
       with:
         miniconda-version: "latest"
         activate-environment: "pyscaffold"
-        environment-file: environment.yml
+        environment-file: ./repo/environment.yml
         auto-update-conda: true
         auto-activate-base: false
     - name: Setup steps
+      working-directory: ./repo # to avoid nested git problem
       run: |
         pip install -e . # otherwise templates are not packaged
-        git config --global user.email "john.doe@example.com"
-        git config --global user.name "John Doe"
+        git config --global user.email "github.action@example.com"
+        git config --global user.name "Github Action"
     - name: Build and create demo
-      working-directory: /tmp # to avoid nested git repo exception
       run: |
         putup demo-dsproject --dsproject -d "Demonstration of a project generated with the Data Science project extension of PyScaffold" -u https://github.com/pyscaffold/pyscaffoldext-dsproject -l MIT
         cd demo-dsproject
         echo -e "[![ReadTheDocs](https://readthedocs.org/projects/dsproject-demo/badge/?version=latest)](https://dsproject-demo.readthedocs.io/)\n$(cat README.md)" > README.md
+        git commit -a -m "Added ReadTheDocs Badge"
     - name: Push to dsproject-demo
       uses: cpina/github-action-push-to-another-repository@master
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source-directory: "/tmp/demo-dsproject"
+        source-directory: "demo-dsproject"
         destination-github-username: "FlorianWilhelm"
         destination-repository-username: "pyscaffold"
         destination-repository-name: "dsproject-demo"
