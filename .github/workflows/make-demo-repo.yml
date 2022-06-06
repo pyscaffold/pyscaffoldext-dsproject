@@ -24,12 +24,14 @@ jobs:
         environment-file: environment.yml
         auto-update-conda: true
         auto-activate-base: false
-    - name: Build and create demo
-      working-directory: /tmp # to avoid nested git repo exception
+    - name: Setup steps
       run: |
         pip install -e . # otherwise templates are not packaged
         git config --global user.email "john.doe@example.com"
         git config --global user.name "John Doe"
+    - name: Build and create demo
+      working-directory: /tmp # to avoid nested git repo exception
+      run: |
         putup demo-dsproject --dsproject -d "Demonstration of a project generated with the Data Science project extension of PyScaffold" -u https://github.com/pyscaffold/pyscaffoldext-dsproject -l MIT
         cd demo-dsproject
         echo -e "[![ReadTheDocs](https://readthedocs.org/projects/dsproject-demo/badge/?version=latest)](https://dsproject-demo.readthedocs.io/)\n$(cat README.md)" > README.md
@@ -38,7 +40,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source-directory: "demo-dsproject"
+        source-directory: "/tmp/demo-dsproject"
         destination-github-username: "FlorianWilhelm"
         destination-repository-username: "pyscaffold"
         destination-repository-name: "dsproject-demo"
