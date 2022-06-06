@@ -71,7 +71,7 @@ Creating a data science project is then as easy as:
 putup --dsproject my_ds_project
 ```
 
-The flag `--dsproject` comprises additionally the flags `--markdown`, `--pre-commit` and `--no-skeleton` 
+The flag `--dsproject` comprises additionally the flags `--markdown`, `--pre-commit` and `--no-skeleton`
 for convenience.
 
 <!-- pyscaffold-notes -->
