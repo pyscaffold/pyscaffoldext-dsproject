@@ -44,7 +44,7 @@ class DSProject(Extension):
 
     def activate(self, actions: List[Action]) -> List[Action]:
         actions = Markdown().activate(actions)
-        # ^  Wrapping the Markdown extension is more reliable then including it via CLI.
+        # ^  Wrapping the Markdown extension is more reliable than including it via CLI.
         #    This way we can trust the activation order for registering actions,
         #    and the Python API is guaranteed to work, even if the user does not include
         #    Markdown in the list of extensions.

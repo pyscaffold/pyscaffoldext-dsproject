@@ -12,6 +12,8 @@ jobs:
       run:
         shell: bash -l {0}
     steps:
+    - name: Clean Workspace
+      uses: AutoModality/action-clean@v1
     - name: Checkout Repo
       uses: actions/checkout@v2
       with:

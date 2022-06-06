@@ -2,6 +2,12 @@
 Changelog
 =========
 
+
+Version 0.7.2
+=============
+
+- Fix inconsistency by renaming ``data/preprocessed`` to ``data/processed``.
+
 Version 0.7.1
 =============
 
