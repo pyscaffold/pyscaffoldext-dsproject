@@ -12,8 +12,6 @@ jobs:
       run:
         shell: bash -l {0}
     steps:
-    - name: Clean Workspace
-      uses: AutoModality/action-clean@v1
     - name: Checkout Repo
       uses: actions/checkout@v2
       with:
@@ -27,7 +25,9 @@ jobs:
         auto-update-conda: true
         auto-activate-base: false
     - name: Build and create demo
+      working-directory: /tmp # to avoid nested git repo exception
       run: |
+        pip install -e . # otherwise templates are not packaged
         git config --global user.email "john.doe@example.com"
         git config --global user.name "John Doe"
         putup demo-dsproject --dsproject -d "Demonstration of a project generated with the Data Science project extension of PyScaffold" -u https://github.com/pyscaffold/pyscaffoldext-dsproject -l MIT
