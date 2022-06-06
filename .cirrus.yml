@@ -82,22 +82,28 @@ linux_mac_task:
     fi
   matrix:
     - name: test (Linux - 3.6)
+      alias: test
       container: {image: "python:3.6-buster"}
       install_script: *debian-install
     - name: test (Linux - 3.7)
+      alias: test
       container: {image: "python:3.7-buster"}
       install_script: *debian-install
     - name: test (Linux - 3.8)
+      alias: test
       container: {image: "python:3.8-buster"}
       install_script: *debian-install
     - name: test (Linux - 3.9)
+      alias: test
       container: {image: "python:3.9-buster"}
       install_script: *debian-install
     - name: test (Linux - 3.10)
+      alias: test
       allow_failures: true  # Python version is not stable
       container: {image: "python:3.10-rc-buster"}
       install_script: *debian-install
     - name: test (Linux - Anaconda)
+      alias: test
       container: {image: "continuumio/anaconda3:2021.05"}
       install_script: *debian-install
       env:
@@ -105,6 +111,7 @@ linux_mac_task:
       extra_install_script:
         - conda install -y -c conda-forge virtualenv build setuptools setuptools-scm pip tox
     - name: test (OS X)
+      alias: test
       macos_instance: {image: "big-sur-xcode"}
       env:
         PYTHON_VERSION: 3.7
@@ -122,6 +129,7 @@ linux_mac_task:
 
 windows_task:
   name: test (Windows)
+  alias: test
   tools_cache:
     folder: 'C:\tools'
     fingerprint_script:
