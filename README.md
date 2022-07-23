@@ -4,6 +4,7 @@
 [![PyPI-Server](https://img.shields.io/pypi/v/pyscaffoldext-dsproject.svg)](https://pypi.org/project/pyscaffoldext-dsproject)
 [![Conda-Forge](https://img.shields.io/conda/vn/conda-forge/pyscaffoldext-dsproject.svg)](https://anaconda.org/conda-forge/pyscaffoldext-dsproject)
 [![Downloads](https://pepy.tech/badge/pyscaffoldext-dsproject/month)](https://pepy.tech/project/pyscaffoldext-dsproject)
+[![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=ff69b4)](https://github.com/sponsors/FlorianWilhelm)
 
 # pyscaffoldext-dsproject
 
