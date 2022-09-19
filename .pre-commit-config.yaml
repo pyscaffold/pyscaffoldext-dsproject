@@ -17,8 +17,8 @@ repos:
   - id: mixed-line-ending
     args: ['--fix=no']
 
-- repo: https://github.com/myint/autoflake.git
-  rev: v1.4
+- repo: https://github.com/PyCQA/autoflake
+  rev: v1.6.0
   hooks:
   - id: autoflake
     args: [
@@ -33,7 +33,7 @@ repos:
   - id: isort
 
 - repo: https://github.com/psf/black
-  rev: 22.6.0
+  rev: 22.8.0
   hooks:
   - id: black
     language_version: python3
