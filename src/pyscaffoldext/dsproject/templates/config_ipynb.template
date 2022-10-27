@@ -1,0 +1,142 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# General configuration for your notebooks\n",
+    "\n",
+    "This file is designed as a place to store configuration that you don't want to keep repeating all over in your notebook files,\n",
+    "such as loading extensions or setting up matplotlib.\n",
+    "\n",
+    "To use it in your files just add the followin a magic comment:\n",
+    "\n",
+    "```ipynb\n",
+    "%run ./config.ipynb\n",
+    "```\n",
+    "\n",
+    "Although the `run` magic directive will make any variable defined in the `config.ipynb` (or module imported) also available in the notebook, please refrain yourself in using these capability...\n",
+    "It is good to make things as explicit as possible and `config.ipynb` should only be used to configure things that usually stay behind the scenes anyway."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Load Jupyter extensions"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "%load_ext autoreload\n",
+    "%autoreload 2"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Configure Python's logger"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import sys\n",
+    "import logging\n",
+    "logging.basicConfig(level=logging.INFO, stream=sys.stdout)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Configure `matplotlib` to display nice plots inside the notebook itself"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "%matplotlib inline\n",
+    "%config InlineBackend.figure_format = 'retina'"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "The `seaborn` library can be used to make `matplotlib` graphs look even nicer..."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import seaborn\n",
+    "seaborn.set_context(\"poster\")\n",
+    "seaborn.set(rc={\"figure.figsize\": (16, 9.)})\n",
+    "seaborn.set_style(\"whitegrid\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Configure `pandas` to display tables nicely"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas\n",
+    "pandas.set_option(\"display.max_rows\", 120)\n",
+    "pandas.set_option(\"display.max_columns\", 120)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.2"
+  },
+  "pycharm": {
+   "stem_cell": {
+    "cell_type": "raw",
+    "metadata": {
+     "collapsed": false
+    },
+    "source": []
+   }
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
