@@ -2,6 +2,7 @@
 A nice option is to put your ``autouse`` fixtures here.
 Functions that can be imported and re-used are more suitable for the ``helpers`` file.
 """
+
 import os
 
 import pytest
